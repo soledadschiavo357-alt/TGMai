@@ -8,9 +8,27 @@
   </url>
   <url>
     <loc>https://tgmai.top/blog/</loc>
-    <lastmod>2026-01-02</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://tgmai.top/blog/telegram-usage-guide.html</loc>
+    <lastmod>2026-01-06</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://tgmai.top/blog/telegram-premium-guide.html</loc>
+    <lastmod>2026-01-06</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://tgmai.top/blog/telegram-account-guide.html</loc>
+    <lastmod>2026-01-06</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://tgmai.top/blog/tg-chinese-pack.html</loc>
