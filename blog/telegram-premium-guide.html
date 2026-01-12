@@ -45,10 +45,13 @@
 </head>
 <body class="min-h-screen bg-slate-900 text-white">
   <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-slate-900/80 border-b border-white/10">
+    <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 blur-[120px] rounded-full -z-10"></div>
+    <div class="absolute right-0 bottom-0 w-[600px] h-[600px] bg-purple-500/5 blur-[120px] rounded-full -z-10"></div>
+
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
         <div class="flex-shrink-0">
-          <a href="../index.html" class="flex items-center gap-3 group">
+          <a href="/" class="flex items-center gap-3 group">
             <div class="relative w-8 h-8 flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-6">
               <svg width="0" height="0">
                 <defs>
@@ -63,27 +66,32 @@
               </svg>
             </div>
             <div class="flex flex-col justify-center">
-              <span class="font-extrabold text-2xl tracking-tighter text-white leading-none">TGMai<span class="text-[#24A1DE] text-3xl leading-none">.</span></span>
-              <span class="text-[0.65rem] font-medium text-slate-400 tracking-widest uppercase ml-0.5">Account Store</span>
+              <span class="font-extrabold text-2xl tracking-tighter text-white leading-none">
+                TGMai<span class="text-[#24A1DE] text-3xl leading-none">.</span>
+              </span>
+              <span class="text-[0.65rem] font-medium text-slate-400 tracking-widest uppercase ml-0.5">
+                Account Store
+              </span>
             </div>
           </a>
         </div>
 
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-8">
-            <a href="../index.html" class="text-white hover:text-[#24A1DE] px-3 py-2 rounded-md text-sm font-medium transition">首页</a>
+            <a href="/" class="text-white hover:text-[#24A1DE] px-3 py-2 rounded-md text-sm font-medium transition">首页</a>
             <div class="relative group cursor-pointer py-2">
                 <span class="text-slate-300 group-hover:text-white text-sm font-medium">产品分类 <i class="fa-solid fa-chevron-down text-xs ml-1"></i></span>
                 <div class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-slate-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left">
                     <div class="py-1">
-                        <a href="../index.html#products" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">精品老号</a>
-                        <a href="../index.html#products" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">成品直登号</a>
-                        <a href="../index.html#products" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Premium会员</a>
+                        <a href="/#products" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">精品老号</a>
+                        <a href="/#products" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">成品直登号</a>
+                        <a href="/#products" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Premium会员</a>
                     </div>
                 </div>
             </div>
-            <a href="../index.html#faq" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition">汉化教程</a>
-            <a href="../index.html#support" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition">售后保障</a>
+
+            <a href="/#blog" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition">汉化教程</a>
+            <a href="/#support" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition">售后保障</a>
           </div>
         </div>
 
@@ -93,28 +101,32 @@
                  <div class="w-px h-3 bg-white/20"></div>
                  <span class="text-xs font-bold text-slate-500 ml-2">USDT</span>
              </div>
-             <a href="/go/buy" rel="nofollow sponsored noopener noreferrer" class="text-slate-300 hover:text-white transition"><i class="fa-solid fa-magnifying-glass"></i> <span class="text-xs ml-1">查询订单</span></a>
-             <a href="/go/buy" rel="nofollow sponsored noopener noreferrer" class="bg-[#24A1DE] hover:bg-[#1b8ac0] text-white px-5 py-2 rounded-full text-sm font-bold transition shadow-lg shadow-blue-500/30">立即选号</a>
+            <a href="/go/buy" rel="nofollow sponsored noopener noreferrer" class="text-slate-300 hover:text-white transition">
+                 <i class="fa-solid fa-magnifying-glass"></i> <span class="text-xs ml-1">查询订单</span>
+             </a>
+            <a href="/#products" class="bg-[#24A1DE] hover:bg-[#1b8ac0] text-white px-5 py-2 rounded-full text-sm font-bold transition shadow-lg shadow-blue-500/30">
+                 立即选号
+              </a>
         </div>
-
+        
         <div class="-mr-2 flex md:hidden">
-          <a href="/go/buy" rel="nofollow sponsored noopener noreferrer" class="bg-[#24A1DE] text-white px-4 py-1.5 rounded-full text-sm font-bold mr-4">选号</a>
-          <button type="button" class="inline-flex items-center justify-center rounded-md bg-slate-800 p-2 text-slate-400 hover:bg-slate-700 hover:text-white" aria-controls="mobile-menu" aria-expanded="false">
+          <button type="button" class="inline-flex items-center justify-center rounded-md bg-slate-800 p-2 text-slate-400 hover:bg-slate-700 hover:text-white focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
             <i class="fa-solid fa-bars text-xl"></i>
           </button>
         </div>
       </div>
     </div>
-  </nav>
-  <div class="hidden md:hidden bg-slate-900 border-b border-white/10" id="mobile-menu">
-    <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-      <a href="../index.html" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-[#24A1DE]">首页</a>
-      <a href="../index.html#products" class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-[#24A1DE] hover:text-white">热销商品</a>
-      <a href="../index.html#faq" class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-[#24A1DE] hover:text-white">常见问题</a>
-      <a href="/go/buy" rel="nofollow sponsored noopener noreferrer" class="block rounded-md px-3 py-2 text-base font-medium text-[#24A1DE] font-bold">查询订单</a>
+    
+    <div class="hidden md:hidden bg-slate-900 border-b border-white/10" id="mobile-menu">
+      <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+        <a href="/" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-[#24A1DE]">首页</a>
+        <a href="/#products" class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-[#24A1DE] hover:text-white">热销商品</a>
+        <a href="/#faq" class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-[#24A1DE] hover:text-white">常见问题</a>
+        <a href="/go/buy" rel="nofollow sponsored noopener noreferrer" class="block rounded-md px-3 py-2 text-base font-medium text-[#24A1DE] font-bold">查询订单</a>
+      </div>
     </div>
-  </div>
+  </nav>
 
   <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 pb-20" style="padding-top: 8rem;">
     <div class="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-8">
@@ -342,7 +354,6 @@
                 <ul class="space-y-4 text-sm text-slate-400">
                     <li><a href="../index.html#faq" class="hover:text-[#24A1DE] transition flex items-center gap-2 group"><i class="fa-solid fa-angle-right text-xs opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all text-[#24A1DE]"></i> 汉化与使用教程</a></li>
                     <li><a href="../index.html#support" class="hover:text-[#24A1DE] transition flex items-center gap-2 group"><i class="fa-solid fa-angle-right text-xs opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all text-[#24A1DE]"></i> 账号安全指南</a></li>
-                    <li><a href="/go/support" rel="nofollow noopener noreferrer" class="hover:text-[#24A1DE] transition flex items-center gap-2 group"><i class="fa-solid fa-angle-right text-xs opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all text-[#24A1DE]"></i> 联系在线客服</a></li>
                 </ul>
             </div>
 
