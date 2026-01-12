@@ -273,15 +273,107 @@
     </div>
   </div>
 
-  <footer class="bg-[#0f172a] border-t border-slate-800 py-12 text-center">
-      <div class="text-slate-500 text-sm">
-          &copy; 2025 <span class="text-white">TGMai.top</span>. All rights reserved.
-      </div>
-      <div class="mt-4 flex justify-center gap-6 text-sm">
-          <a href="../index.html" class="text-slate-400 hover:text-white">返回首页</a>
-          <a href="../index.html#products" class="text-slate-400 hover:text-white">购买账号</a>
-          <a href="/go/support" rel="nofollow noopener noreferrer" class="text-slate-400 hover:text-white">联系客服</a>
-      </div>
+  <footer class="bg-[#0f172a] border-t border-slate-800 pt-20 pb-8 relative overflow-hidden">
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#24A1DE] opacity-[0.03] blur-[120px] rounded-full pointer-events-none"></div>
+
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16 border-b border-white/5 pb-12">
+            
+            <div class="lg:col-span-4 space-y-6">
+                <a href="/" class="flex items-center gap-3 group w-fit">
+                    <div class="relative w-10 h-10 flex items-center justify-center bg-slate-800/50 rounded-xl border border-white/10 group-hover:border-[#24A1DE]/50 transition duration-500">
+                        <svg width="0" height="0">
+                          <defs>
+                            <linearGradient id="brandGradientFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" style="stop-color:#24A1DE;stop-opacity:1" />
+                              <stop offset="100%" style="stop-color:#38bdf8;stop-opacity:1" />
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="url(#brandGradientFooter)" class="w-6 h-6 drop-shadow-md">
+                          <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <span class="font-extrabold text-2xl tracking-tighter text-white leading-none">
+                          TGMai<span class="text-[#24A1DE] text-3xl leading-none">.</span>
+                        </span>
+                        <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Global Assets</span>
+                    </div>
+                </a>
+                
+                <p class="text-sm text-slate-400 leading-relaxed pr-4">
+                    TGMai 是全球领先的数字资产服务商。我们通过自动化技术，为跨境电商与数字营销团队提供安全、纯净的 Telegram 账号解决方案。
+                </p>
+
+                <div class="flex items-center gap-2 px-3 py-1.5 bg-green-500/5 border border-green-500/20 rounded-full w-fit">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                    <span class="text-xs font-mono font-medium text-green-400">Automatic Delivery Online</span>
+                </div>
+            </div>
+
+            <div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wider">产品与服务</h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><a href="/#products" class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300">Telegram 成品号</a></li>
+                        <li><a href="/#products" class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300">Telegram 老号 (抗封)</a></li>
+                        <li><a href="/#products" class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300">Premium 会员代充</a></li>
+                        <li><a href="/#pro-global" class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300">全球号码库 (US/UK)</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wider">支持中心</h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><a href="/#faq" class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300">常见问题 (FAQ)</a></li>
+                        <li><a href="/blog/tg-chinese-pack.html" class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300">汉化教程</a></li>
+                        <li><a href="/blog/tg-account-banned.html" class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300">账号防封指南</a></li>
+                        <li><a href="/go/buy" class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300 font-bold text-slate-300">查询历史订单</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wider">安全支付</h4>
+                    <div class="grid grid-cols-3 gap-3 mb-6">
+                        <div class="aspect-square rounded-xl bg-slate-800 border border-white/5 flex items-center justify-center text-slate-400 hover:text-blue-500 hover:border-blue-500/30 transition group" title="Alipay">
+                            <i class="fa-brands fa-alipay text-2xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <div class="aspect-square rounded-xl bg-slate-800 border border-white/5 flex items-center justify-center text-slate-400 hover:text-green-500 hover:border-green-500/30 transition group" title="WeChat">
+                            <i class="fa-brands fa-weixin text-2xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <div class="aspect-square rounded-xl bg-slate-800 border border-white/5 flex items-center justify-center text-slate-400 hover:text-green-400 hover:border-green-400/30 transition group" title="USDT">
+                            <i class="fa-solid fa-circle-dollar-to-slot text-xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                    <a href="mailto:support@tgmai.top" class="flex items-center gap-3 text-xs text-slate-500 hover:text-white transition group border border-white/5 rounded-lg p-3 bg-white/[0.02]">
+                        <i class="fa-regular fa-envelope text-lg group-hover:text-[#24A1DE] transition-colors"></i>
+                        <span>商务合作 / 售后支持<br>support@tgmai.top</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-slate-500">
+            <div class="flex flex-col gap-2">
+                <p>&copy; 2025 TGMai.top. All rights reserved.</p>
+                <p class="opacity-60 max-w-md">
+                    Disclaimer: TGMai is an independent service provider and is not affiliated with, associated with, or endorsed by Telegram FZ-LLC. All trademarks remain property of their respective owners.
+                </p>
+            </div>
+            
+            <div class="flex gap-6 items-center">
+                <a href="/privacy-terms.html" class="hover:text-white transition">隐私政策</a>
+                <span class="w-px h-3 bg-white/10"></span>
+                <a href="/privacy-terms.html" class="hover:text-white transition">服务条款</a>
+                <span class="w-px h-3 bg-white/10"></span>
+                <a href="/sitemap.xml" class="hover:text-white transition">Sitemap</a>
+            </div>
+        </div>
+    </div>
   </footer>
 
 </body>
