@@ -37,14 +37,26 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://tgmai.top/blog/template.html</loc>
+    <loc>https://tgmai.top/blog/tg-account-banned.html</loc>
     <lastmod>2026-01-12</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://tgmai.top/blog/tg-account-banned.html</loc>
-    <lastmod>2026-01-12</lastmod>
+    <loc>https://tgmai.top/blog/telegram-login-issues.html</loc>
+    <lastmod>2026-01-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://tgmai.top/blog/telegram-no-verification-code.html</loc>
+    <lastmod>2026-01-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://tgmai.top/blog/telegram-passkey-guide.html</loc>
+    <lastmod>2026-01-13</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
