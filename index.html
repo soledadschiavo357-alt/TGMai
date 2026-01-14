@@ -16,7 +16,10 @@
   <meta name="twitter:description" content="独享账号 · 自动发货 · 支持支付宝/微信/USDT · 稳定抗封">
   <meta property="og:site_name" content="TGMai - TG账号自助交易平台">
   <link rel="canonical" href="https://tgmai.top/">
-  <link rel="alternate" hreflang="zh-CN" href="https://tgmai.top/">
+  <meta name="distribution" content="global">
+  <meta name="robots" content="index, follow">
+  <link rel="alternate" hreflang="zh" href="https://tgmai.top/">
+  <link rel="alternate" hreflang="x-default" href="https://tgmai.top/">
   <meta property="og:image" content="/assets/og-cover.svg">
   <meta property="og:image:alt" content="TGMai.top - Telegram账号购买平台">
   <meta name="twitter:image" content="/assets/og-cover.svg">
@@ -37,109 +40,12 @@
       background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0), linear-gradient(135deg, rgba(36,161,222,0.15), rgba(255,255,255,0));
       background-size: 24px 24px, 100% 100%;
     }
+    /* 性能优化：手机端禁用高耗能特效 */
+    @media (max-width: 768px) {
+      * { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+      div[class*="blur-"][class*="absolute"] { display: none !important; }
+    }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Telegram账号购买",
-    "image": "https://tgmai.top/assets/logo.svg",
-    "description": "专业Telegram账号购买平台 (TGMai)。提供全球TG老号、成品号、直登号，支持支付宝/微信/USDT支付，自动发货，稳定抗封。",
-    "sku": "TG-GLOBAL-ACC",
-    "brand": {"@type": "Brand", "name": "TGMai"},
-    "category": "Telegram账号",
-    "url": "https://tgmai.top/",
-    "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1250"},
-    "review": {
-      "@type": "Review",
-      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-      "author": {"@type": "Person", "name": "Verified Customer"}
-    },
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "CNY",
-      "lowPrice": "15",
-      "highPrice": "399",
-      "offerCount": "10",
-      "availability": "https://schema.org/InStock",
-      "seller": {"@type": "Organization",
-    "areaServed": "World", "name": "TGMai.top"},
-      "url": "https://tgmai.top/"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "如何汉化 Telegram？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "在Telegram内搜索中文语言包频道，下载并应用即可。我们也在页面提供汉化教程与常见问题指引。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "购买后如何登录？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "支付完成后系统自动发货，收到手机号+验证码或TData直登文件，按照指引输入或导入即可登录。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "是否稳定抗封？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "精品老号注册时长大于3个月，权重更高，适合私信、拉群、营销等使用场景，更耐封禁。请保持账号活跃并遵守平台规则。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "支持哪些支付方式？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "支持支付宝、微信与USDT。支付后24小时自动发货，订单信息可在订单中心查看。"
-        }
-      }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "TGMai.top",
-    "url": "https://tgmai.top/",
-    "inLanguage": "zh-CN",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://tgmai.top/go/buy?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "areaServed": "World",
-    "name": "TGMai.top",
-    "url": "https://tgmai.top/",
-    "logo": "https://tgmai.top/assets/logo.svg",
-    "sameAs": [
-      "https://twitter-zhanghao.top"
-    ]
-  }
-  </script>
-
-  <meta name="distribution" content="global">
-  <meta name="robots" content="index, follow">
-  <link rel="alternate" hreflang="zh" href="https://tgmai.top/">
-  <link rel="alternate" hreflang="x-default" href="https://tgmai.top/">
 </head>
 <body class="min-h-screen bg-slate-900 text-white">
   <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-slate-900/80 border-b border-white/10">
@@ -232,7 +138,7 @@
   <header class="relative pt-32 pb-20 overflow-hidden">
 
     <div class="absolute bottom-0 right-0 w-[800px] h-[600px] bg-purple-500 opacity-5 blur-[100px] rounded-full -z-10"></div>
-    <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 -z-10"></div>
+
 
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/50 border border-white/10 text-[#24A1DE] text-sm font-bold mb-8 backdrop-blur-md shadow-lg shadow-blue-900/20">
@@ -1017,34 +923,50 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "购买后如何发货？",
+            "name": "购买后怎么发货？多久能收到？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "全自动发货。支付成功后，网页会自动跳转显示账号密码/卡密下载链接，同时也会发送到您的邮箱。"
+              "text": "全自动发货系统，24小时在线。支付成功后，页面会自动跳转显示账号密码/卡密下载链接。同时，系统也会将卡密发送到您预留的邮箱中。如未收到，请点击右上角“查询订单”。"
             }
           },
           {
             "@type": "Question",
-            "name": "购买TG账号需要翻墙吗？",
+            "name": "账号有质保吗？登录不上怎么办？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "是的。Telegram 是海外软件，登录和使用均需要网络代理（魔法）环境。"
+              "text": "当然有！我们提供 24小时首登质保。如果您购买后首次登录遇到密码错误、被封禁等问题，请立即联系客服，核实后我们将免费为您更换账号。请放心购买。"
             }
           },
           {
             "@type": "Question",
-            "name": "支持哪些支付方式？",
+            "name": "什么是 Tdata？手机能用吗？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "支持支付宝 (Alipay)、微信支付 (WeChat Pay) 以及 USDT (TRC20) 加密货币支付。"
+              "text": "Tdata 是电脑版 Telegram 的免密登录文件包。优点是无需验证码，解压即用，防封率极高。注意：Tdata 格式仅限电脑（PC/Mac）使用。如果您需要在手机上登录，请在电脑登录成功保持 2-3 天稳定后，再通过“设置-设备”扫码登录手机。"
             }
           },
           {
             "@type": "Question",
-            "name": "账号有质保吗？",
+            "name": "新号如何防止被封？(养号指南)",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "提供 24 小时首登质保。如果购买后首次登录遇到密码错误或被封禁，请联系客服免费更换。"
+              "text": "1. IP纯净度：请使用静态独享节点，避免使用万人骑的免费加速器。2. 静默养号：登录前 48 小时建议只看不发，不要大量私信陌生人或频繁加群。3. 设备隔离：如果有封号记录，请卸载重装 App 或清理缓存后再登录新号。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "拿到账号后需要修改密码吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "建议修改。为了确保持有权，登录成功且账号稳定（建议养号 1-2 天）后，请务必开启 2FA（两步验证） 并绑定您自己的辅助邮箱。这样账号就彻底属于您了，永远不会丢失。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "支付成功了但没有收到卡密怎么办？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "极少数情况下因网络延迟可能导致跳转失败。请不要惊慌，点击顶部导航栏的 “查询订单”，输入您下单时填写的联系方式即可找回卡密。如果还是查不到，请点击右下角联系人工客服，我们将第一时间为您补单。"
             }
           }
         ]
