@@ -8,8 +8,8 @@ import xml.etree.ElementTree as ET
 HOST = "tgmai.top"
 KEY = "7755e297b53646acaa29d35367f9a4a7"
 KEY_LOCATION = f"https://{HOST}/{KEY}.txt"
-# 获取脚本所在目录的上级目录的 sitemap.xml
-SITEMAP_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "sitemap.xml")
+# 获取脚本所在目录的 sitemap.xml (因为脚本现在在根目录)
+SITEMAP_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sitemap.xml")
 INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow"
 
 def get_urls_from_sitemap(sitemap_path):
