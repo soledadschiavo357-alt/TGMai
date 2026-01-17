@@ -2,15 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tgmai.top/</loc>
-    <lastmod>2026-01-12</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <priority>1.0</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://tgmai.top/blog/</loc>
-    <lastmod>2026-01-12</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://tgmai.top/privacy-terms</loc>
+    <lastmod>2026-01-18</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://tgmai.top/go/buy/</loc>
+    <lastmod>2026-01-18</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://tgmai.top/go/support/</loc>
+    <lastmod>2026-01-18</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://tgmai.top/blog/telegram-usage-guide</loc>
