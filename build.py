@@ -308,7 +308,7 @@ def reconstruct_head(soup, metadata, favicons):
         schema_blog['image'] = metadata['image']
         
     script_blog = soup.new_tag('script', type="application/ld+json")
-    script_blog.string = json.dumps(schema_blog, ensure_ascii=False)
+    script_blog.string = json.dumps(schema_blog, ensure_ascii=False, indent=2)
     append_tag(script_blog)
     
     # BreadcrumbList
@@ -322,7 +322,7 @@ def reconstruct_head(soup, metadata, favicons):
         ]
     }
     script_bread = soup.new_tag('script', type="application/ld+json")
-    script_bread.string = json.dumps(schema_bread, ensure_ascii=False)
+    script_bread.string = json.dumps(schema_bread, ensure_ascii=False, indent=2)
     append_tag(script_bread)
 
 def generate_breadcrumb_html(title):
