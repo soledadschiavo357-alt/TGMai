@@ -538,6 +538,18 @@ def process_posts():
     
     print("Build Complete.")
 
+def fix_seo_tags(soup, full_url):
+    """Ensure canonical and hreflang tags use absolute URLs"""
+    # Canonical
+    canon = soup.find('link', rel='canonical')
+    if canon:
+        canon['href'] = full_url
+    
+    # Hreflang
+    for link in soup.find_all('link', rel='alternate'):
+        if link.get('hreflang'):
+            link['href'] = full_url
+
 def update_index_html(posts):
     print(f"Updating {INDEX_FILE}...")
     with open(INDEX_FILE, 'r', encoding='utf-8') as f:
@@ -574,7 +586,15 @@ def update_index_html(posts):
             
     # Clean URLs in Index
     for tag in soup.find_all(['a', 'link'], href=True):
+        # Skip SEO tags (canonical, alternate/hreflang)
+        rel = tag.get('rel', [])
+        if isinstance(rel, str): rel = [rel]
+        if set(rel) & {'canonical', 'alternate'}:
+            continue
         tag['href'] = clean_url(tag['href'])
+    
+    # Fix SEO tags explicitly
+    fix_seo_tags(soup, f"{DOMAIN}/")
             
     with open(INDEX_FILE, 'w', encoding='utf-8') as f:
         f.write(str(soup.prettify()))
@@ -621,7 +641,15 @@ def update_blog_index_html(posts):
             
     # Clean URLs in Blog Index
     for tag in soup.find_all(['a', 'link'], href=True):
+        # Skip SEO tags (canonical, alternate/hreflang)
+        rel = tag.get('rel', [])
+        if isinstance(rel, str): rel = [rel]
+        if set(rel) & {'canonical', 'alternate'}:
+            continue
         tag['href'] = clean_url(tag['href'])
+        
+    # Fix SEO tags explicitly
+    fix_seo_tags(soup, f"{DOMAIN}/blog/")
             
     with open(BLOG_INDEX_FILE, 'w', encoding='utf-8') as f:
         f.write(str(soup.prettify()))
