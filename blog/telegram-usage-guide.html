@@ -1,442 +1,673 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Telegram 新手入门指南：汉化设置、核心功能与避坑防骗 - TGMai Blog</title>
-  <meta name="description" content="Telegram新手必看教程：手把手教你设置中文界面，深度解析频道(Channel)、机器人(Bot)与加密聊天功能，助你快速上手电报APP。">
-  <meta name="keywords" content="Telegram教程, Telegram怎么用, TG汉化, 电报中文设置, Telegram机器人, Secret Chat">
-  <link rel="canonical" href="https://tgmai.top/blog/telegram-usage-guide">
-  <meta name="distribution" content="global">
-  <meta name="robots" content="index, follow">
-  <link rel="alternate" hreflang="zh" href="https://tgmai.top/blog/telegram-usage-guide">
-  <link rel="alternate" hreflang="x-default" href="https://tgmai.top/blog/telegram-usage-guide">
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <script src="https://cdn.tailwindcss.com"></script>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Telegram 新手入门指南：汉化设置、核心功能与避坑防骗 - TGMai Blog
+  </title>
+  <meta content="Telegram新手必看教程：手把手教你设置中文界面，深度解析频道(Channel)、机器人(Bot)与加密聊天功能，助你快速上手电报APP。" name="description"/>
+  <meta content="Telegram教程, Telegram怎么用, TG汉化, 电报中文设置, Telegram机器人, Secret Chat" name="keywords"/>
+  <link href="/blog/telegram-usage-guide" rel="canonical"/>
+  <meta content="index, follow" name="robots"/>
+  <link href="/blog/telegram-usage-guide" hreflang="zh" rel="alternate"/>
+  <link href="/blog/telegram-usage-guide" hreflang="x-default" rel="alternate"/>
+  <link href="/assets/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+  <link href="/assets/logo.png" rel="icon" sizes="512x512" type="image/png"/>
+  <link href="/assets/logo.png" rel="apple-touch-icon"/>
+  <link href="https://cdn.tailwindcss.com" rel="preconnect"/>
+  <link href="https://cdnjs.cloudflare.com" rel="preconnect"/>
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
   <style>
-    :root { color-scheme: dark; }
+   :root { color-scheme: dark; }
     body { background: #0f172a; color: #e5e7eb; }
     a { color: #38bdf8; }
     code, pre { background: #0b1220; border-radius: 0.5rem; }
   </style>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Telegram 新手入门指南：汉化设置、核心功能与避坑防骗",
-    "description": "Telegram新手必看教程：手把手教你设置中文界面，深度解析频道(Channel)、机器人(Bot)与加密聊天功能，助你快速上手电报APP。",
-    "datePublished": "2026-01-06",
-    "dateModified": "2026-01-06",
-    "author": {"@type": "Person", "name": "TGMai"},
-    "publisher": {"@type": "Organization", "name": "TGMai.top", "logo": {"@type": "ImageObject", "url": "/assets/logo.svg"}},
-    "image": "/assets/og-cover.svg",
-    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tgmai.top/blog/telegram-usage-guide"}
-  }
+   {"@context": "https://schema.org", "@type": "BlogPosting", "headline": "\n   Telegram 新手入门指南：汉化设置、核心功能与避坑防骗", "description": "Telegram新手必看教程：手把手教你设置中文界面，深度解析频道(Channel)、机器人(Bot)与加密聊天功能，助你快速上手电报APP。", "datePublished": "2026-01-06", "dateModified": "2026-01-20", "author": {"@type": "Organization", "name": "TGMai"}, "publisher": {"@type": "Organization", "name": "TGMai.top", "logo": {"@type": "ImageObject", "url": "/assets/logo.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tgmai.top/blog/telegram-usage-guide"}, "image": "/assets/og-cover.svg"}
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://tgmai.top/"},
-      {"@type": "ListItem", "position": 2, "name": "博客", "item": "https://tgmai.top/blog/"},
-      {"@type": "ListItem", "position": 3, "name": "正文", "item": "https://tgmai.top/blog/telegram-usage-guide"}
-    ]
-  }
+   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://tgmai.top/"}, {"@type": "ListItem", "position": 2, "name": "博客", "item": "https://tgmai.top/blog/"}, {"@type": "ListItem", "position": 3, "name": "\n   Telegram 新手入门指南：汉化设置、核心功能与避坑防骗", "item": "https://tgmai.top/blog/telegram-usage-guide"}]}
   </script>
-</head>
-<body class="min-h-screen bg-slate-900 text-white">
+ </head>
+ <body class="min-h-screen bg-slate-900 text-white">
   <nav aria-label="主导航" class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-slate-900/80 border-b border-white/10">
-    <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 blur-[120px] rounded-full -z-10"></div>
-    <div class="absolute right-0 bottom-0 w-[600px] h-[600px] bg-purple-500/5 blur-[120px] rounded-full -z-10"></div>
-
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex h-16 items-center justify-between">
-        <div class="flex-shrink-0">
-          <a href="/" class="flex items-center gap-3 group">
-            <div class="relative w-8 h-8 flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-6">
-              <svg width="0" height="0">
-                <defs>
-                  <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#24A1DE;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#38bdf8;stop-opacity:1" />
-                  </linearGradient>
-                </defs>
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="url(#brandGradient)" class="w-full h-full drop-shadow-[0_0_10px_rgba(36,161,222,0.5)]">
-                <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
-              </svg>
-            </div>
-            <div class="flex flex-col justify-center">
-              <span class="font-extrabold text-2xl tracking-tighter text-white leading-none">
-                TGMai<span class="text-[#24A1DE] text-3xl leading-none">.</span>
-              </span>
-              <span class="text-[0.65rem] font-medium text-slate-400 tracking-widest uppercase ml-0.5">
-                Account Store
-              </span>
-            </div>
+   <div class="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 blur-[120px] rounded-full -z-10">
+   </div>
+   <div class="pointer-events-none absolute right-0 bottom-0 w-[600px] h-[600px] bg-purple-500/5 blur-[120px] rounded-full -z-10">
+   </div>
+   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+     <div class="flex-shrink-0">
+      <a class="flex items-center gap-3 group" href="/">
+       <div class="relative w-8 h-8 flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-6">
+        <svg height="0" width="0">
+         <defs>
+          <lineargradient id="brandGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+           <stop offset="0%" style="stop-color:#24A1DE;stop-opacity:1">
+           </stop>
+           <stop offset="100%" style="stop-color:#38bdf8;stop-opacity:1">
+           </stop>
+          </lineargradient>
+         </defs>
+        </svg>
+        <svg class="w-full h-full drop-shadow-[0_0_10px_rgba(36,161,222,0.5)]" fill="url(#brandGradient)" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+         </path>
+        </svg>
+       </div>
+       <div class="flex flex-col justify-center">
+        <span class="font-extrabold text-2xl tracking-tighter text-white leading-none">
+         TGMai
+         <span class="text-[#24A1DE] text-3xl leading-none">
+          .
+         </span>
+        </span>
+        <span class="text-[0.65rem] font-medium text-slate-400 tracking-widest uppercase ml-0.5">
+         Account Store
+        </span>
+       </div>
+      </a>
+     </div>
+     <div class="hidden md:block">
+      <div class="ml-10 flex items-baseline space-x-8">
+       <a class="text-white hover:text-[#24A1DE] px-3 py-2 rounded-md text-sm font-medium transition" href="/">
+        首页
+       </a>
+       <div class="relative group cursor-pointer py-2">
+        <span class="text-slate-300 group-hover:text-white text-sm font-medium">
+         产品分类
+         <i class="fa-solid fa-chevron-down text-xs ml-1">
+         </i>
+        </span>
+        <div class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-slate-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left">
+         <div class="py-1">
+          <a class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white" href="#pro-global">
+           精品老号
           </a>
+          <a class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white" href="#pro-new">
+           成品直登号
+          </a>
+          <a class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white" href="#pro-combo">
+           懒人组合包
+          </a>
+          <a class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white" href="#pro-premium">
+           Premium会员
+          </a>
+         </div>
         </div>
-
-        <div class="hidden md:block">
-          <div class="ml-10 flex items-baseline space-x-8">
-            <a href="/" class="text-white hover:text-[#24A1DE] px-3 py-2 rounded-md text-sm font-medium transition">首页</a>
-            <div class="relative group cursor-pointer py-2">
-                <span class="text-slate-300 group-hover:text-white text-sm font-medium">产品分类 <i class="fa-solid fa-chevron-down text-xs ml-1"></i></span>
-                <div class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-slate-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left">
-                    <div class="py-1">
-                        <a href="/#products" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">精品老号</a>
-                        <a href="/#products" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">成品直登号</a>
-                        <a href="/#products" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Premium会员</a>
-                    </div>
-                </div>
-            </div>
-
-            <a href="/#blog" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition">汉化教程</a>
-            <a href="/#support" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition">售后保障</a>
-          </div>
-        </div>
-
-        <div class="hidden md:flex items-center gap-4">
-             <div class="flex items-center bg-slate-800/50 rounded-full px-3 py-1 border border-white/10">
-                 <span class="text-xs font-bold text-[#24A1DE] mr-2">CNY</span>
-                 <div class="w-px h-3 bg-white/20"></div>
-                 <span class="text-xs font-bold text-slate-500 ml-2">USDT</span>
-             </div>
-            <a href="/#products" class="text-slate-300 hover:text-white transition">
-                 <i class="fa-solid fa-magnifying-glass"></i> <span class="text-xs ml-1">查询订单</span>
-             </a>
-            <a href="/#products" class="bg-[#24A1DE] hover:bg-[#1b8ac0] text-white px-5 py-2 rounded-full text-sm font-bold transition shadow-lg shadow-blue-500/30">
-                 立即选号
-              </a>
-        </div>
-        
-        <div class="-mr-2 flex md:hidden">
-          <button type="button" class="inline-flex items-center justify-center rounded-md bg-slate-800 p-2 text-slate-400 hover:bg-slate-700 hover:text-white focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <i class="fa-solid fa-bars text-xl"></i>
-          </button>
-        </div>
+       </div>
+       <a class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition" href="/blog/">
+        汉化教程
+       </a>
+       <a class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition" href="#faq">
+        常见问题
+       </a>
+       <a class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition" href="#support">
+        售后保障
+       </a>
       </div>
-    </div>
-    
-    <div class="hidden md:hidden bg-slate-900 border-b border-white/10" id="mobile-menu">
-      <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-        <a href="/" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-[#24A1DE]">首页</a>
-        <a href="/#products" class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-[#24A1DE] hover:text-white">热销商品</a>
-        <a href="/#faq" class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-[#24A1DE] hover:text-white">常见问题</a>
-        <a href="/#products" class="block rounded-md px-3 py-2 text-base font-medium text-[#24A1DE] font-bold">查询订单</a>
+     </div>
+     <div class="hidden md:flex items-center gap-4">
+      <div class="flex items-center bg-slate-800/50 rounded-full px-3 py-1 border border-white/10">
+       <span class="text-xs font-bold text-[#24A1DE] mr-2">
+        CNY
+       </span>
+       <div class="w-px h-3 bg-white/20">
+       </div>
+       <span class="text-xs font-bold text-slate-500 ml-2">
+        USDT
+       </span>
       </div>
+      <a class="text-slate-300 hover:text-white transition" href="#products">
+       <i class="fa-solid fa-magnifying-glass">
+       </i>
+       <span class="text-xs ml-1">
+        查询订单
+       </span>
+      </a>
+      <a class="bg-[#24A1DE] hover:bg-[#1b8ac0] text-white px-5 py-2 rounded-full text-sm font-bold transition shadow-lg shadow-blue-500/30" href="/go/buy">
+       立即选号
+      </a>
+     </div>
+     <div class="-mr-2 flex md:hidden">
+      <button aria-controls="mobile-menu" aria-expanded="false" class="inline-flex items-center justify-center rounded-md bg-slate-800 p-2 text-slate-400 hover:bg-slate-700 hover:text-white focus:outline-none" type="button">
+       <span class="sr-only">
+        Open main menu
+       </span>
+       <i class="fa-solid fa-bars text-xl">
+       </i>
+      </button>
+     </div>
     </div>
+   </div>
+   <div class="hidden md:hidden bg-slate-900 border-b border-white/10" id="mobile-menu">
+    <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+     <a class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-[#24A1DE]" href="/">
+      首页
+     </a>
+     <a class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-[#24A1DE] hover:text-white" href="#products">
+      热销商品
+     </a>
+     <a class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-[#24A1DE] hover:text-white" href="/blog/">
+      汉化教程
+     </a>
+     <a class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-[#24A1DE] hover:text-white" href="#faq">
+      常见问题
+     </a>
+     <a class="block rounded-md px-3 py-2 text-base font-medium text-[#24A1DE] font-bold" href="#products">
+      查询订单
+     </a>
+    </div>
+   </div>
   </nav>
-
   <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 pb-20" style="padding-top: 8rem;">
-    <div class="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-8">
-      <article>
-        <nav aria-label="Breadcrumb" class="text-sm text-slate-400 mb-4">
-          <a href="/" class="hover:text-white">首页</a>
-          <span class="mx-2">›</span>
-          <a href="/blog/" class="hover:text-white">博客</a>
-          <span class="mx-2">›</span>
-          <span class="text-slate-500">正文</span>
-        </nav>
-        <header class="mb-8">
-          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">Telegram 新手入门指南：汉化设置、核心功能与避坑防骗</h1>
-          <div class="mt-3 text-slate-400 text-sm">作者 TGMai · 发布于 <time datetime="2026-01-06">2026-01-06</time> · <span id="reading-time">预计阅读 4 分钟</span></div>
-        </header>
-
-        <div class="rounded-2xl bg-slate-800 border border-white/10 p-5">
-          <div class="text-sm font-bold text-white mb-2">文章摘要</div>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            刚开始使用 Telegram（电报/纸飞机）？本文为你整理了最全面的新手入门指南，包括一键设置中文界面、玩转频道与机器人功能，以及如何识别官方验证诈骗，助你从零开始成为 TG 达人。
-          </p>
+   <div class="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-8">
+    <article>
+     <header class="mb-8">
+      <nav aria-label="Breadcrumb" class="relative z-10 overflow-x-auto whitespace-nowrap mb-6 text-sm">
+       <ol class="flex items-center gap-2 text-slate-400">
+        <li>
+         <a class="hover:text-white transition-colors flex items-center gap-1 cursor-pointer" href="/">
+          <i class="fa-solid fa-house text-xs">
+          </i>
+          首页
+         </a>
+        </li>
+        <li>
+         <span class="mx-1 text-slate-600">
+          /
+         </span>
+        </li>
+        <li>
+         <a class="hover:text-white transition-colors cursor-pointer" href="/blog/">
+          教程资源
+         </a>
+        </li>
+        <li>
+         <span class="mx-1 text-slate-600">
+          /
+         </span>
+        </li>
+        <li aria-current="page" class="text-slate-500 font-medium truncate max-w-[150px] md:max-w-xs select-none">
+         Telegram 新手入门指南：汉化设置、核心功能与避坑防骗
+        </li>
+       </ol>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+       Telegram 新手入门指南：汉化设置、核心功能与避坑防骗
+      </h1>
+      <div class="mt-3 text-slate-400 text-sm">
+       作者 TGMai · 发布于
+       <time datetime="2026-01-06">
+        2026-01-06
+       </time>
+       ·
+       <span id="reading-time">
+        预计阅读 4 分钟
+       </span>
+      </div>
+     </header>
+     <div class="rounded-2xl bg-slate-800 border border-white/10 p-5">
+      <div class="text-sm font-bold text-white mb-2">
+       文章摘要
+      </div>
+      <p class="text-slate-300 text-sm leading-relaxed">
+       刚开始使用 Telegram（电报/纸飞机）？本文为你整理了最全面的新手入门指南，包括一键设置中文界面、玩转频道与机器人功能，以及如何识别官方验证诈骗，助你从零开始成为 TG 达人。
+      </p>
+     </div>
+     <div class="prose prose-invert max-w-none">
+      <h2 class="text-2xl font-bold mt-8">
+       一、快速上手：设置中文界面
+      </h2>
+      <p class="mt-3 text-slate-300">
+       Telegram 默认界面是英文的，很多新用户可能会感到不习惯。其实设置成中文非常简单，只需几步即可完成：
+      </p>
+      <div class="mt-4 space-y-4">
+       <div class="flex gap-4 items-start">
+        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#24A1DE] text-white flex items-center justify-center font-bold text-sm">
+         1
         </div>
-
-        <div class="prose prose-invert max-w-none">
-          <h2 class="text-2xl font-bold mt-8">一、快速上手：设置中文界面</h2>
-          <p class="mt-3 text-slate-300">Telegram 默认界面是英文的，很多新用户可能会感到不习惯。其实设置成中文非常简单，只需几步即可完成：</p>
-          
-          <div class="mt-4 space-y-4">
-            <div class="flex gap-4 items-start">
-                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#24A1DE] text-white flex items-center justify-center font-bold text-sm">1</div>
-                <div>
-                    <h4 class="font-bold text-white">打开设置</h4>
-                    <p class="text-sm text-slate-400 mt-1">点击左上角的三条横线（安卓）或右下角的 <span class="bg-slate-800 px-1.5 py-0.5 rounded text-xs border border-white/10">Settings</span>（苹果）。</p>
-                </div>
-            </div>
-            <div class="flex gap-4 items-start">
-                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#24A1DE] text-white flex items-center justify-center font-bold text-sm">2</div>
-                <div>
-                    <h4 class="font-bold text-white">进入收藏夹</h4>
-                    <p class="text-sm text-slate-400 mt-1">找到 <span class="bg-slate-800 px-1.5 py-0.5 rounded text-xs border border-white/10">Saved Messages</span>（已保存的消息）并点击进入。</p>
-                </div>
-            </div>
-            <div class="flex gap-4 items-start">
-                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#24A1DE] text-white flex items-center justify-center font-bold text-sm">3</div>
-                <div>
-                    <h4 class="font-bold text-white">发送汉化指令</h4>
-                    <p class="text-sm text-slate-400 mt-1">在对话框里输入 <code>@ibwsk</code>（大小写均可），然后发送。</p>
-                </div>
-            </div>
-            <div class="flex gap-4 items-start">
-                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#24A1DE] text-white flex items-center justify-center font-bold text-sm">4</div>
-                <div>
-                    <h4 class="font-bold text-white">应用中文包</h4>
-                    <p class="text-sm text-slate-400 mt-1">点击自己发的那条蓝色的链接消息，进入后点击底部的“中文”按钮，按照提示确认即可。</p>
-                </div>
-            </div>
-          </div>
-          <p class="mt-4 text-sm text-slate-400">嫌麻烦？也可以直接阅读我们的<a href="/blog/tg-chinese-pack" class="text-[#24A1DE] hover:underline">汉化详细图文教程</a>。</p>
-
-          <h2 class="text-2xl font-bold mt-10">二、核心功能与玩法</h2>
-          <p class="mt-3 text-slate-300">Telegram 绝不仅仅是一个聊天工具，它的功能非常强大，主要包括以下几个核心板块：</p>
-          
-          <div class="grid md:grid-cols-2 gap-6 mt-6">
-            <div class="bg-slate-800/50 p-4 rounded-xl border border-white/5 hover:border-[#24A1DE]/30 transition">
-                <div class="text-[#24A1DE] text-2xl mb-2"><i class="fa-solid fa-bullhorn"></i></div>
-                <h4 class="font-bold text-white mb-1">频道 (Channel)</h4>
-                <p class="text-sm text-slate-400">类似公众号的广播站。管理员单向发布信息，关注者接收资讯。你可以关注新闻、娱乐、科技等各类频道。</p>
-            </div>
-            <div class="bg-slate-800/50 p-4 rounded-xl border border-white/5 hover:border-[#24A1DE]/30 transition">
-                <div class="text-purple-400 text-2xl mb-2"><i class="fa-solid fa-robot"></i></div>
-                <h4 class="font-bold text-white mb-1">机器人 (Bot)</h4>
-                <p class="text-sm text-slate-400">Telegram 的灵魂功能。可以自动翻译、下载文件、管理群组、查询汇率等，极大提升效率。</p>
-            </div>
-            <div class="bg-slate-800/50 p-4 rounded-xl border border-white/5 hover:border-[#24A1DE]/30 transition">
-                <div class="text-green-400 text-2xl mb-2"><i class="fa-solid fa-users"></i></div>
-                <h4 class="font-bold text-white mb-1">超级群组 (Group)</h4>
-                <p class="text-sm text-slate-400">群组成员上限极高（可达20万人），适合项目团队协作或大规模兴趣社群交流。</p>
-            </div>
-            <div class="bg-slate-800/50 p-4 rounded-xl border border-white/5 hover:border-[#24A1DE]/30 transition">
-                <div class="text-red-400 text-2xl mb-2"><i class="fa-solid fa-user-secret"></i></div>
-                <h4 class="font-bold text-white mb-1">秘密聊天 (Secret Chat)</h4>
-                <p class="text-sm text-slate-400">端对端加密聊天功能。消息、照片可设置“阅后即焚”，不支持转发，最大程度保护隐私。</p>
-            </div>
-          </div>
-
-          <h2 class="text-2xl font-bold mt-10">三、常见问题与避坑指南</h2>
-          
-          <h3 class="text-xl font-semibold mt-6">1. 警惕“官方验证”诈骗</h3>
-          <div class="bg-red-500/10 border-l-4 border-red-500 p-4 mt-2">
-            <p class="text-sm text-slate-300"><strong>典型话术：</strong>收到自称“Telegram 官方”的消息，声称你的账号违规或需要二次验证，要求点击链接，否则封号。<br><strong>真相：</strong>这是<span class="text-red-400 font-bold">100% 的诈骗</span>！Telegram 官方绝不会通过私信发送此类链接索要个人信息。遇到此类消息请直接拉黑举报。</p>
-          </div>
-
-          <h3 class="text-xl font-semibold mt-6">2. 关于会员 (Premium)</h3>
-          <p class="mt-2 text-slate-300">Telegram 有付费会员服务，提供 4GB 文件上传、更多频道关注上限等功能。但对于大多数普通用户来说，<strong>免费版的功能已经完全足够使用</strong>，无需产生额外焦虑。如果你确实有重度使用需求，可以参考我们的<a href="/blog/telegram-premium-guide" class="text-[#24A1DE] hover:underline">会员详细评测</a>。</p>
+        <div>
+         <h4 class="font-bold text-white">
+          打开设置
+         </h4>
+         <p class="text-sm text-slate-400 mt-1">
+          点击左上角的三条横线（安卓）或右下角的
+          <span class="bg-slate-800 px-1.5 py-0.5 rounded text-xs border border-white/10">
+           Settings
+          </span>
+          （苹果）。
+         </p>
         </div>
-
-        <div class="mt-10">
-          <a href="../index.html#products" class="inline-flex items-center gap-2 rounded-xl bg-[#24A1DE] px-6 py-3 font-semibold text-white hover:bg-[#1b8ac0] transition">
-            🚀 还没账号？点击购买成品直登号
-          </a>
+       </div>
+       <div class="flex gap-4 items-start">
+        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#24A1DE] text-white flex items-center justify-center font-bold text-sm">
+         2
         </div>
-
-        <div class="mt-8 grid md:grid-cols-2 gap-6">
-          <div class="rounded-2xl bg-slate-800 border border-white/10 p-5">
-            <div class="text-sm font-bold text-white mb-3">作者与更新</div>
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-lg bg-[#24A1DE]/20 flex items-center justify-center text-[#24A1DE] font-bold">TG</div>
-              <div class="text-sm text-slate-300">TGMai · 最后更新 2026-01-06</div>
-            </div>
-          </div>
-          <div class="rounded-2xl bg-slate-800 border border-white/10 p-5">
-            <div class="text-sm font-bold text-white mb-3">参考来源</div>
-            <ul class="text-sm text-slate-300 space-y-2">
-              <li>Telegram 官方 FAQ</li>
-              <li>Telegram 功能导览</li>
-            </ul>
-          </div>
+        <div>
+         <h4 class="font-bold text-white">
+          进入收藏夹
+         </h4>
+         <p class="text-sm text-slate-400 mt-1">
+          找到
+          <span class="bg-slate-800 px-1.5 py-0.5 rounded text-xs border border-white/10">
+           Saved Messages
+          </span>
+          （已保存的消息）并点击进入。
+         </p>
         </div>
-
-        <div class="mt-8">
-          <h2 class="text-sm font-bold text-slate-300 mb-3">相关文章</h2>
-          <div class="grid md:grid-cols-2 gap-4">
-            <a href="/blog/telegram-premium-guide" class="block rounded-xl bg-slate-800 border border-white/10 p-4 hover:border-[#24A1DE] transition">
-              <div class="font-semibold text-white">Telegram Premium 会员全解析</div>
-              <div class="text-xs text-slate-400 mt-1">功能权益与性价比分析</div>
-            </a>
-            <a href="/blog/telegram-account-guide" class="block rounded-xl bg-slate-800 border border-white/10 p-4 hover:border-[#24A1DE] transition">
-              <div class="font-semibold text-white">Telegram 账号全攻略</div>
-              <div class="text-xs text-slate-400 mt-1">注册、防封与商业化指南</div>
-            </a>
-          </div>
+       </div>
+       <div class="flex gap-4 items-start">
+        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#24A1DE] text-white flex items-center justify-center font-bold text-sm">
+         3
         </div>
-
-        <div class="mt-6 flex items-center justify-between text-sm text-slate-400">
-          <a href="/blog/" class="hover:text-white">← 返回列表</a>
-          <a href="/blog/telegram-premium-guide" class="hover:text-white">下一篇：会员权益解析 →</a>
+        <div>
+         <h4 class="font-bold text-white">
+          发送汉化指令
+         </h4>
+         <p class="text-sm text-slate-400 mt-1">
+          在对话框里输入
+          <code>
+           @ibwsk
+          </code>
+          （大小写均可），然后发送。
+         </p>
         </div>
-      </article>
-
-      <aside class="space-y-8">
-        <div class="lg:sticky top-24 space-y-8">
-          <div class="rounded-2xl bg-slate-800/50 border border-white/10 p-4">
-            <h2 class="text-sm font-bold text-slate-300 mb-3">目录</h2>
-            <div id="toc" class="space-y-2 text-sm text-slate-300"></div>
-          </div>
-          <div class="rounded-2xl bg-slate-800/50 border border-white/10 p-4">
-            <h2 class="text-sm font-bold text-slate-300 mb-3">热门推荐</h2>
-            <div class="space-y-3">
-              <div class="rounded-xl bg-slate-800 border border-white/10 p-4">
-                <div class="font-bold">新手全套包</div>
-                <a href="../index.html#products" class="mt-3 inline-block rounded-md bg-[#24A1DE] px-3 py-1 text-sm font-semibold text-white hover:bg-[#1b8ac0] transition">前往选购</a>
-              </div>
-              <div class="rounded-xl bg-slate-800 border border-[#24A1DE] p-4">
-                <div class="font-bold">成品直登号</div>
-                <a href="../index.html#products" class="mt-3 inline-block rounded-md bg-[#24A1DE] px-3 py-1 text-sm font-semibold text-white hover:bg-[#1b8ac0] transition">前往选购</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="rounded-2xl bg-slate-800/50 border border-white/10 p-4">
-            <h2 class="text-sm font-bold text-slate-300 mb-3">快速导航</h2>
-            <div class="space-y-2">
-              <a href="../index.html#faq" class="block px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:bg-white/10 transition">汉化教程</a>
-              <a href="/blog/tg-account-banned" class="block px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:bg-white/10 transition">防封指南</a>
-
-            </div>
-          </div>
+       </div>
+       <div class="flex gap-4 items-start">
+        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#24A1DE] text-white flex items-center justify-center font-bold text-sm">
+         4
         </div>
-      </aside>
-    </div>
+        <div>
+         <h4 class="font-bold text-white">
+          应用中文包
+         </h4>
+         <p class="text-sm text-slate-400 mt-1">
+          点击自己发的那条蓝色的链接消息，进入后点击底部的“中文”按钮，按照提示确认即可。
+         </p>
+        </div>
+       </div>
+      </div>
+      <p class="mt-4 text-sm text-slate-400">
+       嫌麻烦？也可以直接阅读我们的
+       <a class="text-[#24A1DE] hover:underline" href="/blog/tg-chinese-pack">
+        汉化详细图文教程
+       </a>
+       。
+      </p>
+      <h2 class="text-2xl font-bold mt-10">
+       二、核心功能与玩法
+      </h2>
+      <p class="mt-3 text-slate-300">
+       Telegram 绝不仅仅是一个聊天工具，它的功能非常强大，主要包括以下几个核心板块：
+      </p>
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+       <div class="bg-slate-800/50 p-4 rounded-xl border border-white/5 hover:border-[#24A1DE]/30 transition">
+        <div class="text-[#24A1DE] text-2xl mb-2">
+         <i class="fa-solid fa-bullhorn">
+         </i>
+        </div>
+        <h4 class="font-bold text-white mb-1">
+         频道 (Channel)
+        </h4>
+        <p class="text-sm text-slate-400">
+         类似公众号的广播站。管理员单向发布信息，关注者接收资讯。你可以关注新闻、娱乐、科技等各类频道。
+        </p>
+       </div>
+       <div class="bg-slate-800/50 p-4 rounded-xl border border-white/5 hover:border-[#24A1DE]/30 transition">
+        <div class="text-purple-400 text-2xl mb-2">
+         <i class="fa-solid fa-robot">
+         </i>
+        </div>
+        <h4 class="font-bold text-white mb-1">
+         机器人 (Bot)
+        </h4>
+        <p class="text-sm text-slate-400">
+         Telegram 的灵魂功能。可以自动翻译、下载文件、管理群组、查询汇率等，极大提升效率。
+        </p>
+       </div>
+       <div class="bg-slate-800/50 p-4 rounded-xl border border-white/5 hover:border-[#24A1DE]/30 transition">
+        <div class="text-green-400 text-2xl mb-2">
+         <i class="fa-solid fa-users">
+         </i>
+        </div>
+        <h4 class="font-bold text-white mb-1">
+         超级群组 (Group)
+        </h4>
+        <p class="text-sm text-slate-400">
+         群组成员上限极高（可达20万人），适合项目团队协作或大规模兴趣社群交流。
+        </p>
+       </div>
+       <div class="bg-slate-800/50 p-4 rounded-xl border border-white/5 hover:border-[#24A1DE]/30 transition">
+        <div class="text-red-400 text-2xl mb-2">
+         <i class="fa-solid fa-user-secret">
+         </i>
+        </div>
+        <h4 class="font-bold text-white mb-1">
+         秘密聊天 (Secret Chat)
+        </h4>
+        <p class="text-sm text-slate-400">
+         端对端加密聊天功能。消息、照片可设置“阅后即焚”，不支持转发，最大程度保护隐私。
+        </p>
+       </div>
+      </div>
+      <h2 class="text-2xl font-bold mt-10">
+       三、常见问题与避坑指南
+      </h2>
+      <h3 class="text-xl font-semibold mt-6">
+       1. 警惕“官方验证”诈骗
+      </h3>
+      <div class="bg-red-500/10 border-l-4 border-red-500 p-4 mt-2">
+       <p class="text-sm text-slate-300">
+        <strong>
+         典型话术：
+        </strong>
+        收到自称“Telegram 官方”的消息，声称你的账号违规或需要二次验证，要求点击链接，否则封号。
+        <br/>
+        <strong>
+         真相：
+        </strong>
+        这是
+        <span class="text-red-400 font-bold">
+         100% 的诈骗
+        </span>
+        ！Telegram 官方绝不会通过私信发送此类链接索要个人信息。遇到此类消息请直接拉黑举报。
+       </p>
+      </div>
+      <h3 class="text-xl font-semibold mt-6">
+       2. 关于会员 (Premium)
+      </h3>
+      <p class="mt-2 text-slate-300">
+       Telegram 有付费会员服务，提供 4GB 文件上传、更多频道关注上限等功能。但对于大多数普通用户来说，
+       <strong>
+        免费版的功能已经完全足够使用
+       </strong>
+       ，无需产生额外焦虑。如果你确实有重度使用需求，可以参考我们的
+       <a class="text-[#24A1DE] hover:underline" href="/blog/telegram-premium-guide">
+        会员详细评测
+       </a>
+       。
+      </p>
+     </div>
+     <div class="mt-10">
+      <a class="inline-flex items-center gap-2 rounded-xl bg-[#24A1DE] px-6 py-3 font-semibold text-white hover:bg-[#1b8ac0] transition" href="/#products">
+       🚀 还没账号？点击购买成品直登号
+      </a>
+     </div>
+     <div class="mt-8 grid md:grid-cols-2 gap-6">
+      <div class="rounded-2xl bg-slate-800 border border-white/10 p-5">
+       <div class="text-sm font-bold text-white mb-3">
+        作者与更新
+       </div>
+       <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-[#24A1DE]/20 flex items-center justify-center text-[#24A1DE] font-bold">
+         TG
+        </div>
+        <div class="text-sm text-slate-300">
+         TGMai · 最后更新 2026-01-06
+        </div>
+       </div>
+      </div>
+      <div class="rounded-2xl bg-slate-800 border border-white/10 p-5">
+       <div class="text-sm font-bold text-white mb-3">
+        参考来源
+       </div>
+       <ul class="text-sm text-slate-300 space-y-2">
+        <li>
+         Telegram 官方 FAQ
+        </li>
+        <li>
+         Telegram 功能导览
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="mt-6 flex items-center justify-between text-sm text-slate-400">
+      <a class="hover:text-white" href="/blog/">
+       ← 返回列表
+      </a>
+      <a class="hover:text-white" href="/blog/telegram-premium-guide">
+       下一篇：会员权益解析 →
+      </a>
+     </div>
+     <div class="mt-8 recommendation-section">
+      <h2 class="text-sm font-bold text-slate-300 mb-3">
+       相关文章
+      </h2>
+      <div class="grid md:grid-cols-2 gap-4">
+       <a class="block rounded-xl bg-slate-800 border border-white/10 p-4 hover:border-[#24A1DE] transition" href="/blog/telegram-account-guide">
+        <div class="font-semibold text-white">
+         Telegram 账号全攻略：注册、防封与商业化指南
+        </div>
+        <div class="text-xs text-slate-400 mt-1">
+         使用教程
+        </div>
+       </a>
+       <a class="block rounded-xl bg-slate-800 border border-white/10 p-4 hover:border-[#24A1DE] transition" href="/blog/tg-account-banned">
+        <div class="font-semibold text-white">
+         Telegram账号被封禁怎么办？2026最新TG号码解封申诉与防封全攻略
+        </div>
+        <div class="text-xs text-slate-400 mt-1">
+         安全指南
+        </div>
+       </a>
+      </div>
+     </div>
+    </article>
+    <aside class="space-y-8">
+     <div class="lg:sticky top-24 space-y-8">
+      <div class="rounded-2xl bg-slate-800/50 border border-white/10 p-4">
+       <h2 class="text-sm font-bold text-slate-300 mb-3">
+        目录
+       </h2>
+       <div class="space-y-2 text-sm text-slate-300" id="toc">
+       </div>
+      </div>
+      <div class="rounded-2xl bg-slate-800/50 border border-white/10 p-4">
+       <h2 class="text-sm font-bold text-slate-300 mb-3">
+        热门推荐
+       </h2>
+       <div class="space-y-3">
+        <div class="rounded-xl bg-slate-800 border border-white/10 p-4">
+         <div class="font-bold">
+          新手全套包
+         </div>
+         <a class="mt-3 inline-block rounded-md bg-[#24A1DE] px-3 py-1 text-sm font-semibold text-white hover:bg-[#1b8ac0] transition" href="/#products">
+          前往选购
+         </a>
+        </div>
+        <div class="rounded-xl bg-slate-800 border border-[#24A1DE] p-4">
+         <div class="font-bold">
+          成品直登号
+         </div>
+         <a class="mt-3 inline-block rounded-md bg-[#24A1DE] px-3 py-1 text-sm font-semibold text-white hover:bg-[#1b8ac0] transition" href="/#products">
+          前往选购
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="rounded-2xl bg-slate-800/50 border border-white/10 p-4">
+       <h2 class="text-sm font-bold text-slate-300 mb-3">
+        快速导航
+       </h2>
+       <div class="space-y-2">
+        <a class="block px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:bg-white/10 transition" href="/#faq">
+         汉化教程
+        </a>
+        <a class="block px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:bg-white/10 transition" href="/blog/tg-account-banned">
+         防封指南
+        </a>
+       </div>
+      </div>
+     </div>
+    </aside>
+   </div>
   </main>
-
   <footer class="bg-[#0f172a] border-t border-slate-800 pt-20 pb-8 relative overflow-hidden">
-    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#24A1DE] opacity-[0.03] blur-[120px] rounded-full pointer-events-none"></div>
-
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16 border-b border-white/5 pb-12">
-            
-            <div class="lg:col-span-4 space-y-6">
-                <a href="/" class="flex items-center gap-3 group w-fit">
-                    <div class="relative w-10 h-10 flex items-center justify-center bg-slate-800/50 rounded-xl border border-white/10 group-hover:border-[#24A1DE]/50 transition duration-500">
-                        <svg width="0" height="0">
-                          <defs>
-                            <linearGradient id="brandGradientFooter" x1="0%" y1="0%" x2="100%" y2="100%">
-                              <stop offset="0%" style="stop-color:#24A1DE;stop-opacity:1" />
-                              <stop offset="100%" style="stop-color:#38bdf8;stop-opacity:1" />
-                            </linearGradient>
-                          </defs>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="url(#brandGradientFooter)" class="w-6 h-6 drop-shadow-md">
-                          <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
-                        </svg>
-                    </div>
-                    <div class="flex flex-col justify-center">
-                        <span class="font-extrabold text-2xl tracking-tighter text-white leading-none">
-                          TGMai<span class="text-[#24A1DE] text-3xl leading-none">.</span>
-                        </span>
-                        <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Global Assets</span>
-                    </div>
-                </a>
-                
-                <p class="text-sm text-slate-400 leading-relaxed pr-4">
-                    TGMai 是全球领先的数字资产服务商。我们通过自动化技术，为跨境电商与数字营销团队提供安全、纯净的 Telegram 账号解决方案。
-                </p>
-
-                <div class="flex items-center gap-2 px-3 py-1.5 bg-green-500/5 border border-green-500/20 rounded-full w-fit">
-                    <span class="relative flex h-2 w-2">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                    </span>
-                    <span class="text-xs font-mono font-medium text-green-400">Automatic Delivery Online</span>
-                </div>
-            </div>
-
-            <div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8">
-                <div>
-                    <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wider">产品与服务</h4>
-                    <ul class="space-y-4 text-sm text-slate-400">
-                        <li><a href="/#products" class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300">Telegram 成品号</a></li>
-                        <li><a href="/#products" class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300">Telegram 老号 (抗封)</a></li>
-                        <li><a href="/#products" class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300">Premium 会员代充</a></li>
-                        <li><a href="/#pro-global" class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300">全球号码库 (US/UK)</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wider">支持中心</h4>
-                    <ul class="space-y-4 text-sm text-slate-400">
-                        <li><a href="/#faq" class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300">常见问题 (FAQ)</a></li>
-                        <li><a href="/blog/tg-chinese-pack" class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300">汉化教程</a></li>
-                        <li><a href="/blog/tg-account-banned" class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300">账号防封指南</a></li>
-                        <li><a href="/#products" class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300 font-bold text-slate-300">查询历史订单</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wider">安全支付</h4>
-                    <div class="grid grid-cols-3 gap-3 mb-6">
-                        <div class="aspect-square rounded-xl bg-slate-800 border border-white/5 flex items-center justify-center text-slate-400 hover:text-blue-500 hover:border-blue-500/30 transition group" title="Alipay">
-                            <i class="fa-brands fa-alipay text-2xl group-hover:scale-110 transition-transform"></i>
-                        </div>
-                        <div class="aspect-square rounded-xl bg-slate-800 border border-white/5 flex items-center justify-center text-slate-400 hover:text-green-500 hover:border-green-500/30 transition group" title="WeChat">
-                            <i class="fa-brands fa-weixin text-2xl group-hover:scale-110 transition-transform"></i>
-                        </div>
-                        <div class="aspect-square rounded-xl bg-slate-800 border border-white/5 flex items-center justify-center text-slate-400 hover:text-green-400 hover:border-green-400/30 transition group" title="USDT">
-                            <i class="fa-solid fa-circle-dollar-to-slot text-xl group-hover:scale-110 transition-transform"></i>
-                        </div>
-                    </div>
-                    <a href="mailto:support@tgmai.top" class="flex items-center gap-3 text-xs text-slate-500 hover:text-white transition group border border-white/5 rounded-lg p-3 bg-white/[0.02]">
-                        <i class="fa-regular fa-envelope text-lg group-hover:text-[#24A1DE] transition-colors"></i>
-                        <span>商务合作 / 售后支持<br>support@tgmai.top</span>
-                    </a>
-                </div>
-            </div>
+   <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#24A1DE] opacity-[0.03] blur-[120px] rounded-full pointer-events-none">
+   </div>
+   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16 border-b border-white/5 pb-12">
+     <div class="lg:col-span-4 space-y-6">
+      <a class="flex items-center gap-3 group w-fit" href="/">
+       <div class="relative w-10 h-10 flex items-center justify-center bg-slate-800/50 rounded-xl border border-white/10 group-hover:border-[#24A1DE]/50 transition duration-500">
+        <svg height="0" width="0">
+         <defs>
+          <lineargradient id="brandGradientFooter" x1="0%" x2="100%" y1="0%" y2="100%">
+           <stop offset="0%" style="stop-color:#24A1DE;stop-opacity:1">
+           </stop>
+           <stop offset="100%" style="stop-color:#38bdf8;stop-opacity:1">
+           </stop>
+          </lineargradient>
+         </defs>
+        </svg>
+        <svg class="w-6 h-6 drop-shadow-md" fill="url(#brandGradientFooter)" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+         </path>
+        </svg>
+       </div>
+       <div class="flex flex-col justify-center">
+        <span class="font-extrabold text-2xl tracking-tighter text-white leading-none">
+         TGMai
+         <span class="text-[#24A1DE] text-3xl leading-none">
+          .
+         </span>
+        </span>
+        <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+         Global Assets
+        </span>
+       </div>
+      </a>
+      <p class="text-sm text-slate-400 leading-relaxed pr-4">
+       TGMai 是全球领先的数字资产服务商。我们通过自动化技术，为跨境电商与数字营销团队提供安全、纯净的 Telegram 账号解决方案。
+      </p>
+      <div class="flex items-center gap-2 px-3 py-1.5 bg-green-500/5 border border-green-500/20 rounded-full w-fit">
+       <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75">
+        </span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500">
+        </span>
+       </span>
+       <span class="text-xs font-mono font-medium text-green-400">
+        Automatic Delivery Online
+       </span>
+      </div>
+     </div>
+     <div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8">
+      <div>
+       <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wider">
+        产品与服务
+       </h4>
+       <ul class="space-y-4 text-sm text-slate-400">
+        <li>
+         <a class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300" href="#products">
+          Telegram 成品号
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300" href="#products">
+          Telegram 老号 (抗封)
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300" href="#products">
+          Premium 会员代充
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300" href="#pro-global">
+          全球号码库 (US/UK)
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div>
+       <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wider">
+        支持中心
+       </h4>
+       <ul class="space-y-4 text-sm text-slate-400">
+        <li>
+         <a class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300" href="#faq">
+          常见问题 (FAQ)
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300" href="/about">
+          关于我们
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300" href="/blog/tg-account-banned">
+          账号防封指南
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-[#24A1DE] transition block hover:translate-x-1 duration-300 font-bold text-slate-300" href="#products">
+          查询历史订单
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div>
+       <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wider">
+        安全支付
+       </h4>
+       <div class="grid grid-cols-3 gap-3 mb-6">
+        <div class="aspect-square rounded-xl bg-slate-800 border border-white/5 flex items-center justify-center text-slate-400 hover:text-blue-500 hover:border-blue-500/30 transition group" title="Alipay">
+         <i class="fa-brands fa-alipay text-2xl group-hover:scale-110 transition-transform">
+         </i>
         </div>
-
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-slate-500">
-            <div class="flex flex-col gap-2">
-                <p>&copy; 2025 TGMai.top. All rights reserved.</p>
-                <p class="opacity-60 max-w-md">
-                    Disclaimer: TGMai is an independent service provider and is not affiliated with, associated with, or endorsed by Telegram FZ-LLC. All trademarks remain property of their respective owners.
-                </p>
-            </div>
-            
-            <div class="flex gap-6 items-center">
-                <a href="/privacy-terms" class="hover:text-white transition">隐私政策</a>
-                <span class="w-px h-3 bg-white/10"></span>
-                <a href="/privacy-terms" class="hover:text-white transition">服务条款</a>
-                <span class="w-px h-3 bg-white/10"></span>
-                <a href="/sitemap.xml" class="hover:text-white transition">Sitemap</a>
-            </div>
+        <div class="aspect-square rounded-xl bg-slate-800 border border-white/5 flex items-center justify-center text-slate-400 hover:text-green-500 hover:border-green-500/30 transition group" title="WeChat">
+         <i class="fa-brands fa-weixin text-2xl group-hover:scale-110 transition-transform">
+         </i>
         </div>
+        <div class="aspect-square rounded-xl bg-slate-800 border border-white/5 flex items-center justify-center text-slate-400 hover:text-green-400 hover:border-green-400/30 transition group" title="USDT">
+         <i class="fa-solid fa-circle-dollar-to-slot text-xl group-hover:scale-110 transition-transform">
+         </i>
+        </div>
+       </div>
+       <a class="flex items-center gap-3 text-xs text-slate-500 hover:text-white transition group border border-white/5 rounded-lg p-3 bg-white/[0.02]" href="mailto:support@tgmai.top">
+        <i class="fa-regular fa-envelope text-lg group-hover:text-[#24A1DE] transition-colors">
+        </i>
+        <span>
+         商务合作 / 售后支持
+         <br/>
+         support@tgmai.top
+        </span>
+       </a>
+      </div>
+     </div>
     </div>
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-slate-500">
+     <div class="flex flex-col gap-2">
+      <p>
+       © 2025 TGMai.top. All rights reserved.
+      </p>
+      <p class="opacity-60 max-w-md">
+       Disclaimer: TGMai is an independent service provider and is not affiliated with, associated with, or endorsed by Telegram FZ-LLC. All trademarks remain property of their respective owners.
+      </p>
+     </div>
+     <div class="flex gap-6 items-center">
+      <a class="hover:text-white transition" href="/privacy-terms">
+       隐私政策
+      </a>
+      <span class="w-px h-3 bg-white/10">
+      </span>
+      <a class="hover:text-white transition" href="/privacy-terms">
+       服务条款
+      </a>
+      <span class="w-px h-3 bg-white/10">
+      </span>
+      <a class="hover:text-white transition" href="/sitemap">
+       Sitemap
+      </a>
+     </div>
+    </div>
+   </div>
   </footer>
-
-  <script>
-     const btn = document.querySelector("button[aria-controls='mobile-menu']");
-     const menu = document.getElementById("mobile-menu");
-     btn?.addEventListener("click", () => {
-       const expanded = btn.getAttribute("aria-expanded") === "true" || false;
-       btn.setAttribute("aria-expanded", (!expanded).toString());
-       menu.classList.toggle("hidden");
-     });
-     const article = document.querySelector('.prose');
-     const text = article?.innerText || '';
-     const words = text.trim().split(/\s+/).length;
-     const minutes = Math.max(1, Math.round(words / 300));
-     const rt = document.getElementById('reading-time');
-     if (rt) rt.textContent = `预计阅读 ${minutes} 分钟`;
-     const headings = Array.from(article.querySelectorAll('h2, h3'));
-     headings.forEach(h => {
-       if (!h.id) {
-         const id = h.textContent.trim().toLowerCase().replace(/[^a-z0-9\u4e00-\u9fa5]+/g, '-');
-         h.id = id;
-       }
-     });
-     const toc = document.getElementById('toc');
-     if (toc) {
-       headings.forEach(h => {
-         const a = document.createElement('a');
-         a.href = `#${h.id}`;
-         a.textContent = h.textContent.trim();
-         a.className = 'block px-3 py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition';
-         toc.appendChild(a);
-       });
-     }
-  </script>
-</body>
+ </body>
 </html>
