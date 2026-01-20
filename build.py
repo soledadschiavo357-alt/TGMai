@@ -611,8 +611,32 @@ def update_blog_index_html(posts):
         print(f"Warning: {BLOG_INDEX_FILE} not found.")
         return
 
+    # Sync Layout from Index
+    nav_component, footer_component, _ = get_layout_components()
+    
     with open(BLOG_INDEX_FILE, 'r', encoding='utf-8') as f:
         soup = BeautifulSoup(f, 'html.parser')
+
+    import copy
+    
+    # Update Nav
+    if nav_component:
+        old_nav = soup.find('nav')
+        if old_nav:
+            new_nav = copy.copy(nav_component)
+            # Ensure links are clean
+            for a in new_nav.find_all('a', href=True):
+                a['href'] = clean_url(a['href'])
+            old_nav.replace_with(new_nav)
+            
+    # Update Footer
+    if footer_component:
+        old_footer = soup.find('footer')
+        if old_footer:
+            new_footer = copy.copy(footer_component)
+            for a in new_footer.find_all('a', href=True):
+                a['href'] = clean_url(a['href'])
+            old_footer.replace_with(new_footer)
         
     # Generate Cards for ALL posts
     target_id = "blog-posts-container"
