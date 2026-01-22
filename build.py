@@ -925,22 +925,26 @@ def generate_sitemap(posts):
     print("Generating sitemap.xml...")
     # Static Pages
     urls = [
-        DOMAIN + "/",
-        DOMAIN + "/blog/",
-        DOMAIN + "/about",
-        DOMAIN + "/privacy-terms",
-        DOMAIN + "/sitemap"
+        {"loc": DOMAIN + "/", "changefreq": "monthly", "priority": "1.0"},
+        {"loc": DOMAIN + "/blog/", "changefreq": "monthly", "priority": "0.9"},
+        {"loc": DOMAIN + "/about", "changefreq": "monthly", "priority": "0.5"},
+        {"loc": DOMAIN + "/privacy-terms", "changefreq": "yearly", "priority": "0.3"},
+        {"loc": DOMAIN + "/sitemap", "changefreq": "weekly", "priority": "0.5"}
     ]
     
     # Add Blog Posts
     for post in posts:
-        urls.append(post['canonical_url'])
+        urls.append({
+            "loc": post['canonical_url'],
+            "changefreq": "weekly",
+            "priority": "0.8"
+        })
         
     sitemap_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
     sitemap_content += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     
-    for url in urls:
-        sitemap_content += f'  <url>\n    <loc>{url}</loc>\n    <lastmod>{datetime.now().strftime("%Y-%m-%d")}</lastmod>\n  </url>\n'
+    for url_data in urls:
+        sitemap_content += f'  <url>\n    <loc>{url_data["loc"]}</loc>\n    <lastmod>{datetime.now().strftime("%Y-%m-%d")}</lastmod>\n    <changefreq>{url_data["changefreq"]}</changefreq>\n    <priority>{url_data["priority"]}</priority>\n  </url>\n'
         
     sitemap_content += '</urlset>'
     
