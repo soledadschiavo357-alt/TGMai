@@ -19,7 +19,7 @@ class Config:
         self.keywords = []
         
         # Ignore Lists
-        self.ignore_paths = ['.git', 'node_modules', '__pycache__', '.vscode', '.idea']
+        self.ignore_paths = ['.git', 'node_modules', '__pycache__', '.vscode', '.idea', 'MasterTool']
         self.ignore_url_prefixes = ['javascript:', 'mailto:', 'tel:', '#', 'tg:']
         self.ignore_url_substrings = ['cdn-cgi']
         self.ignore_files_substrings = ['google', '404.html', 'template']

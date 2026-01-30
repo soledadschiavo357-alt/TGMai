@@ -619,6 +619,9 @@ def process_posts():
     update_static_page("privacy-terms.html")
     update_static_page("about.html")
     
+    # 5.2 Update Sitemap HTML Content
+    update_sitemap_html_content(posts)
+    
     # 6. Generate Sitemap
     generate_sitemap(posts)
     
@@ -1002,6 +1005,56 @@ def update_blog_index_html(posts):
     process_seo_links(soup, is_index=False)
             
     with open(BLOG_INDEX_FILE, 'w', encoding='utf-8') as f:
+        f.write(str(soup.prettify()))
+
+def update_sitemap_html_content(posts):
+    """Update the content list of blog posts in sitemap.html"""
+    filename = "sitemap.html"
+    print(f"Updating content in {filename}...")
+    if not os.path.exists(filename):
+        print(f"Warning: {filename} not found.")
+        return
+
+    with open(filename, 'r', encoding='utf-8') as f:
+        soup = BeautifulSoup(f, 'html.parser')
+        
+    # Find the Blog section
+    # Heuristic: Find h2 with text containing "博客"
+    target_ul = None
+    for h2 in soup.find_all('h2', class_='section-title'):
+        if "博客" in h2.get_text():
+            # The ul should be the next sibling or inside the same section
+            section = h2.find_parent('section')
+            if section:
+                target_ul = section.find('ul')
+            break
+            
+    if target_ul:
+        target_ul.clear()
+        
+        # Add "All Posts" link first
+        li_all = soup.new_tag('li')
+        a_all = soup.new_tag('a', href="/blog/", class_="sitemap-link font-semibold text-white")
+        icon_all = soup.new_tag('i', class_="fa-solid fa-list")
+        a_all.append(icon_all)
+        a_all.append(" 博客首页 (全部文章)")
+        li_all.append(a_all)
+        target_ul.append(li_all)
+        target_ul.append('\n')
+        
+        # Add each post
+        for post in posts:
+            li = soup.new_tag('li')
+            a = soup.new_tag('a', href=post['url'], class_="sitemap-link")
+            icon = soup.new_tag('i', class_="fa-regular fa-file-lines")
+            a.append(icon)
+            # Use title from post
+            a.append(f" {post['title']}")
+            li.append(a)
+            target_ul.append(li)
+            target_ul.append('\n')
+            
+    with open(filename, 'w', encoding='utf-8') as f:
         f.write(str(soup.prettify()))
 
 def generate_sitemap(posts):
