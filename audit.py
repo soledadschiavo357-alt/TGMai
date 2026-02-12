@@ -1,12 +1,13 @@
 import os
 import sys
 import re
+import csv
 import requests
 import concurrent.futures
 from bs4 import BeautifulSoup
 from colorama import init, Fore, Style
 from urllib.parse import urlparse, urljoin, unquote
-from collections import defaultdict
+from collections import defaultdict, deque
 from pathlib import Path
 
 # Initialize colorama
@@ -72,6 +73,9 @@ class Auditor:
         
         self.html_files = [] # List of full paths
         self.inbound_links = defaultdict(int) # clean_path -> count
+        self.outbound_internal_links = defaultdict(int) # clean_path -> count
+        self.internal_graph = defaultdict(set) # clean_path -> set(clean_target_paths)
+        self.page_details = {} # clean_path -> {title, depth, etc}
         self.external_links = set() # Set of (url, source_file)
         
         self.score = 100
@@ -186,12 +190,27 @@ class Auditor:
 
     def audit_page(self, file_path):
         rel_path = os.path.relpath(file_path, self.config.root_dir)
+        clean_source = self.get_clean_path(file_path)
         
+        # Initialize page details
+        if clean_source not in self.page_details:
+            self.page_details[clean_source] = {
+                'file_path': file_path,
+                'title': 'Unknown',
+                'depth': float('inf')
+            }
+
         try:
             with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
                 content = f.read()
                 soup = BeautifulSoup(content, 'html.parser')
                 
+                # --- Metadata ---
+                # Title
+                title_tag = soup.find('title')
+                if title_tag and title_tag.string:
+                    self.page_details[clean_source]['title'] = title_tag.string.strip()
+
                 # --- Semantics ---
                 # H1 Check
                 h1s = soup.find_all('h1')
@@ -238,11 +257,17 @@ class Auditor:
                             # Convert to relative path to check existence
                             local_href = href[len(self.config.base_url):]
                             candidates = self.resolve_local_link(file_path, local_href)
-                            exists, _ = self.check_local_resource_exists(candidates)
+                            exists, resolved_path = self.check_local_resource_exists(candidates)
                             if not exists:
                                 print(f"{Fore.RED}[ERROR] Dead Link (Internal Absolute): {href} in {rel_path}")
                                 self.score -= 10
                                 self.issues['local_dead_links'] += 1
+                            else:
+                                clean_source = self.get_clean_path(file_path)
+                                self.outbound_internal_links[clean_source] += 1
+                                clean_target = self.get_clean_path(resolved_path)
+                                self.inbound_links[clean_target] += 1
+                                self.internal_graph[clean_source].add(clean_target)
                         else:
                             # True External
                             self.external_links.add(href)
@@ -270,6 +295,9 @@ class Auditor:
                         target = self.config.redirects[href]
                         if target.startswith('http'):
                             self.external_links.add(target)
+                        else:
+                            clean_source = self.get_clean_path(file_path)
+                            self.outbound_internal_links[clean_source] += 1
                         continue
 
                     # URL Format Checks
@@ -296,7 +324,11 @@ class Auditor:
                         # Map resolved path to clean URL
                         clean_target = self.get_clean_path(resolved_path)
                         self.inbound_links[clean_target] += 1
-
+                        
+                        clean_source = self.get_clean_path(file_path)
+                        self.outbound_internal_links[clean_source] += 1
+                        self.internal_graph[clean_source].add(clean_target)
+        
         except Exception as e:
             print(f"{Fore.RED}[ERROR] Processing {rel_path}: {e}")
 
@@ -322,7 +354,64 @@ class Auditor:
                     self.score -= 5
                     self.issues['external_dead_links'] += 1
 
+    def calculate_click_depth(self):
+        """Calculate click depth (distance from root) using BFS"""
+        queue = deque([('/', 0)])
+        visited = {'/'}
+        
+        # Ensure root is in page_details even if not scanned yet (should be)
+        if '/' in self.page_details:
+            self.page_details['/']['depth'] = 0
+            
+        while queue:
+            current_page, depth = queue.popleft()
+            
+            # Update depth for current page
+            if current_page in self.page_details:
+                self.page_details[current_page]['depth'] = min(self.page_details[current_page]['depth'], depth)
+            
+            # Find neighbors
+            if current_page in self.internal_graph:
+                for neighbor in self.internal_graph[current_page]:
+                    if neighbor not in visited:
+                        visited.add(neighbor)
+                        queue.append((neighbor, depth + 1))
+                        
+    def save_csv_report(self):
+        filename = 'audit_report.csv'
+        print(f"\n{Fore.CYAN}Generating CSV report: {filename}...")
+        
+        try:
+            with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
+                fieldnames = ['URL', 'Title', 'Click Depth', 'Inbound Links', 'Outbound Internal', 'Outbound External', 'Status']
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                
+                writer.writeheader()
+                
+                # Sort by depth then URL
+                sorted_pages = sorted(self.page_details.items(), key=lambda x: (x[1]['depth'], x[0]))
+                
+                for url, details in sorted_pages:
+                    depth = details['depth']
+                    if depth == float('inf'):
+                        depth = 'Orphan'
+                        
+                    writer.writerow({
+                        'URL': url,
+                        'Title': details.get('title', 'N/A'),
+                        'Click Depth': depth,
+                        'Inbound Links': self.inbound_links.get(url, 0),
+                        'Outbound Internal': self.outbound_internal_links.get(url, 0),
+                        'Outbound External': 0, # TODO: Track per page if needed, currently global set
+                        'Status': '200' # Assumed existing local file
+                    })
+            print(f"{Fore.GREEN}CSV report saved successfully.")
+        except Exception as e:
+            print(f"{Fore.RED}Failed to save CSV report: {e}")
+
     def generate_report(self):
+        self.calculate_click_depth()
+        
         print(f"\n{Fore.MAGENTA}{'='*30} AUDIT REPORT {'='*30}")
         
         # Orphans
@@ -354,10 +443,66 @@ class Auditor:
                 self.issues['orphans'] += 1
         
         # Top Pages
-        print(f"\n{Fore.GREEN}Top 10 Pages by Internal Links:")
+        print(f"\n{Fore.GREEN}Top 10 Pages by Inbound Internal Links:")
         top_pages = sorted(self.inbound_links.items(), key=lambda x: x[1], reverse=True)[:10]
         for page, count in top_pages:
             print(f"  {page}: {count}")
+
+        # Weakly Linked Pages
+        print(f"\n{Fore.YELLOW}Weakly Linked Pages (Inbound < 3, excluding orphans):")
+        weak_pages = [p for p, c in self.inbound_links.items() if 0 < c < 3]
+        if weak_pages:
+            for p in sorted(weak_pages):
+                print(f"  {p}: {self.inbound_links[p]}")
+        else:
+            print(f"  {Fore.GREEN}None.")
+
+        # Click Depth Distribution
+        print(f"\n{Fore.BLUE}Click Depth Distribution:")
+        depth_counts = defaultdict(int)
+        for details in self.page_details.values():
+            d = details['depth']
+            if d == float('inf'):
+                depth_counts['Orphan'] += 1
+            else:
+                depth_counts[d] += 1
+        
+        for d in sorted([k for k in depth_counts.keys() if isinstance(k, int)]):
+             print(f"  Depth {d}: {depth_counts[d]} pages")
+        if 'Orphan' in depth_counts:
+             print(f"  Orphans: {depth_counts['Orphan']} pages")
+
+        # Internal Outbound Links Stats
+        print(f"\n{Fore.GREEN}Internal Outbound Links Analysis:")
+        
+        # Identify pages with few internal links
+        low_link_pages = []
+        no_link_pages = []
+        
+        for file_path in self.html_files:
+            clean_path = self.get_clean_path(file_path)
+            count = self.outbound_internal_links[clean_path]
+            
+            if count == 0:
+                no_link_pages.append(clean_path)
+            elif count < 3:
+                low_link_pages.append((clean_path, count))
+        
+        if no_link_pages:
+            print(f"{Fore.RED}Dead End Pages (0 internal outbound links):")
+            for p in no_link_pages:
+                print(f"  {p}")
+                # Optional: Deduct score?
+                # self.score -= 1
+        else:
+            print(f"{Fore.GREEN}  No dead end pages found.")
+
+        if low_link_pages:
+            print(f"{Fore.YELLOW}Pages with few internal outbound links (< 3):")
+            for p, c in low_link_pages:
+                print(f"  {p}: {c}")
+        else:
+             print(f"{Fore.GREEN}  All pages have 3+ internal outbound links.")
 
         # Final Score
         self.score = max(0, self.score)
@@ -380,6 +525,8 @@ class Auditor:
             print(f"\n{Fore.CYAN}Actionable Advice:")
             print("  Run 'python3 fix_links.py' to attempt automatic link fixes.")
             print("  Run 'python3 build.py' to rebuild static assets if needed.")
+
+        # self.save_csv_report()
 
     def run(self):
         print(f"{Fore.GREEN}Starting SEO Audit...")
