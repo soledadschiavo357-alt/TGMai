@@ -4,14 +4,14 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>
-   Telegram 账号登不上去怎么办？ 最新登录失败排查指南 - TGMai Blog
+   Telegram Bot 全面指南：从入门到精通（功能、创建与应用场景） - TGMai Blog
   </title>
-  <meta content="登录转圈、收不到验证码、提示连接失败？本文汇总了 Telegram 登录失败的常见原因与解决办法，从网络环境检查到 Premium 专属通道，助你快速恢复账号使用。" name="description"/>
-  <meta content="Telegram登录失败, TG登不上, Telegram一直转圈, 飞机号登录, TG连接失败, Telegram代理" name="keywords"/>
-  <link href="https://tgmai.top/blog/telegram-login-issues" rel="canonical"/>
+  <meta content="深入解析 Telegram Bot（电报机器人）的核心功能、应用场景及创建教程。无论你是想提高效率、管理社群，还是进行开发定制，本文都能为你提供全面指导。" name="description"/>
+  <meta content="telegram bot, 电报bot, telegram机器人, 电报机器人, 自动化工具, BotFather, 机器人开发" name="keywords"/>
+  <link href="https://tgmai.top/blog/telegram-bot-guide" rel="canonical"/>
   <meta content="index, follow" name="robots"/>
-  <link href="https://tgmai.top/blog/telegram-login-issues" hreflang="zh" rel="alternate"/>
-  <link href="https://tgmai.top/blog/telegram-login-issues" hreflang="x-default" rel="alternate"/>
+  <link href="https://tgmai.top/blog/telegram-bot-guide" hreflang="zh" rel="alternate"/>
+  <link href="https://tgmai.top/blog/telegram-bot-guide" hreflang="x-default" rel="alternate"/>
   <link href="/assets/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
   <link href="/assets/logo.png" rel="icon" sizes="512x512" type="image/png"/>
   <link href="/assets/logo.png" rel="apple-touch-icon"/>
@@ -30,9 +30,9 @@
    {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Telegram 账号登不上去怎么办？ 最新登录失败排查指南",
-  "description": "登录转圈、收不到验证码、提示连接失败？本文汇总了 Telegram 登录失败的常见原因与解决办法，从网络环境检查到 Premium 专属通道，助你快速恢复账号使用。",
-  "datePublished": "2026-01-13",
+  "headline": "Telegram Bot 全面指南：从入门到精通（功能、创建与应用场景）",
+  "description": "深入解析 Telegram Bot（电报机器人）的核心功能、应用场景及创建教程。无论你是想提高效率、管理社群，还是进行开发定制，本文都能为你提供全面指导。",
+  "datePublished": "2026-02-13",
   "dateModified": "2026-02-13",
   "author": {
     "@type": "Organization",
@@ -48,7 +48,7 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://tgmai.top/blog/telegram-login-issues"
+    "@id": "https://tgmai.top/blog/telegram-bot-guide"
   },
   "image": "/assets/og-cover.svg"
 }
@@ -73,8 +73,8 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Telegram 账号登不上去怎么办？ 最新登录失败排查指南",
-      "item": "https://tgmai.top/blog/telegram-login-issues"
+      "name": "Telegram Bot 全面指南：从入门到精通（功能、创建与应用场景）",
+      "item": "https://tgmai.top/blog/telegram-bot-guide"
     }
   ]
 }
@@ -240,177 +240,265 @@
          </span>
         </li>
         <li aria-current="page" class="text-slate-500 font-medium truncate max-w-[150px] md:max-w-xs select-none">
-         Telegram 账号登不上去怎么办？ 最新登录失败排查指南
+         Telegram Bot 全面指南：从入门到精通（功能、创建与应用场景）
         </li>
        </ol>
       </nav>
       <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">
-       Telegram 账号登不上去怎么办？ 最新登录失败排查指南
+       Telegram Bot 全面指南：从入门到精通（功能、创建与应用场景）
       </h1>
       <div class="mt-3 text-slate-400 text-sm">
        作者 TGMai · 发布于
-       <time datetime="2026-01-13">
-        2026-01-13
+       <time datetime="2026-02-13">
+        2026-02-13
        </time>
        ·
        <span id="reading-time">
-        预计阅读 4 分钟
+        预计阅读 5 分钟
        </span>
       </div>
      </header>
      <div class="rounded-2xl bg-slate-800 border border-white/10 p-5">
       <div class="text-sm font-bold text-white mb-2">
-       排查速览
+       结论速览
       </div>
-      <ul class="list-disc pl-5 text-slate-300 text-sm space-y-1">
-       <li>
-        <strong>
-         网络问题
-        </strong>
-        ：最常见原因，建议切换 IP 节点或使用海外流量卡。
-       </li>
-       <li>
-        <strong>
-         验证码拦截
-        </strong>
-        ：检查手机垃圾短信箱，避免频繁请求导致风控。
-       </li>
-       <li>
-        <strong>
-         Premium 通道
-        </strong>
-        ：开通会员可提升登录成功率，支持礼品卡支付。
-       </li>
-      </ul>
+      <p class="text-slate-300 text-sm leading-relaxed">
+       Telegram Bot 是一个24小时在线的智能助手，能帮你自动处理信息、管理群组、执行任务甚至进行金融交易。无论你是个人用户、社群管理者还是企业主，善用 Bot 都能极大提升效率。本文将带你全面了解 Bot 的功能，并教你如何轻松创建一个属于自己的 Bot。
+      </p>
      </div>
      <div class="prose prose-invert max-w-none">
-      <p class="mt-3 text-slate-300">
-       登录 Telegram 时遇到一直在“连接中”（Connecting...）转圈，或者收不到验证码，是很多国内用户常遇到的问题。这通常不是单一原因导致的，我们可以按照以下步骤一步步排查解决。
-      </p>
       <h2 class="text-2xl font-bold mt-8" id="section-1">
-       一、检查基础问题
+       一、Telegram Bot 是什么？
       </h2>
-      <h3 class="text-xl font-semibold mt-6" id="section-2">
-       1. 网络环境 (最常见)
-      </h3>
-      <p class="text-slate-300">
-       Telegram 的服务器在海外，在国内直接连接是无法登录的。如果你的代理工具（VPN/梯子）不稳定，或者节点延迟过高，就会导致一直转圈。
+      <p class="mt-3 text-slate-300">
+       简单来说，Telegram Bot 就是一个运行在 Telegram 平台上的自动化程序。你可以把它理解成一个
+       <strong>
+        24小时在线、不知疲倦的智能助手或服务插件
+       </strong>
+       。它可以自动接收和发送消息，执行各种任务，帮你完成很多重复性的工作。
       </p>
-      <ul class="list-disc pl-6 mt-2 text-slate-300 space-y-2">
-       <li>
-        <strong>
-         切换节点：
-        </strong>
-        尝试切换到美国、新加坡或日本的节点，这些地区通常连接更稳定。
-       </li>
-       <li>
-        <strong>
-         检查模式：
-        </strong>
-        确保代理工具开启了“全局模式”或已正确代理了 Telegram 的流量。
-       </li>
-       <li>
-        <strong>
-         使用流量卡：
-        </strong>
-        如果你经常需要登录，建议使用香港流量卡（如 ClubSim、3HK），自带原生香港 IP，不仅连接稳，接收国际短信也更可靠。
-       </li>
-      </ul>
-      <h3 class="text-xl font-semibold mt-6" id="section-3">
-       2. 验证码接收障碍
-      </h3>
-      <p class="text-slate-300">
-       网络通了但收不到码？请检查以下几点：
+      <p class="mt-3 text-slate-300">
+       与普通用户账号不同，Bot 没有电话号码，通过 API 进行控制，并且有着丰富的功能接口。
       </p>
-      <ul class="list-disc pl-6 mt-2 text-slate-300 space-y-2">
-       <li>
-        <strong>
-         垃圾短信拦截：
-        </strong>
-        很多国产手机（如华为、小米）的系统拦截功能非常强，Telegram 的验证码短信（通常是 +44 或 +1 开头）极易被误判为骚扰短信。请务必去“垃圾短信”或“拦截记录”里翻一翻。
+      <h2 class="text-2xl font-bold mt-10" id="section-2">
+       二、它能帮你做什么？（核心功能）
+      </h2>
+      <p class="mt-3 text-slate-300">
+       Telegram Bot 的应用场景非常广泛，以下是它的几个核心功能板块：
+      </p>
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+       <div class="bg-slate-800/50 p-4 rounded-xl border border-white/5 hover:border-[#24A1DE]/30 transition">
+        <div class="text-[#24A1DE] text-2xl mb-2">
+         <i class="fa-solid fa-comments">
+         </i>
+        </div>
+        <h4 class="font-bold text-white mb-1">
+         信息交互
+        </h4>
+        <p class="text-sm text-slate-400">
+         自动回复用户消息，如解答常见问题、提供实时信息（如天气查询、新闻推送、股票行情等）。
+        </p>
+       </div>
+       <div class="bg-slate-800/50 p-4 rounded-xl border border-white/5 hover:border-[#24A1DE]/30 transition">
+        <div class="text-green-400 text-2xl mb-2">
+         <i class="fa-solid fa-list-check">
+         </i>
+        </div>
+        <h4 class="font-bold text-white mb-1">
+         任务自动化
+        </h4>
+        <p class="text-sm text-slate-400">
+         执行重复性任务，如定时发送提醒、自动整理数据、文件格式转换、下载视频等。
+        </p>
+       </div>
+       <div class="bg-slate-800/50 p-4 rounded-xl border border-white/5 hover:border-[#24A1DE]/30 transition">
+        <div class="text-purple-400 text-2xl mb-2">
+         <i class="fa-solid fa-users-gear">
+         </i>
+        </div>
+        <h4 class="font-bold text-white mb-1">
+         群组管理
+        </h4>
+        <p class="text-sm text-slate-400">
+         协助管理员维护群组秩序，如自动踢出违规用户、过滤广告、设置入群验证、统计群成员活跃度等。
+        </p>
+       </div>
+       <div class="bg-slate-800/50 p-4 rounded-xl border border-white/5 hover:border-[#24A1DE]/30 transition">
+        <div class="text-yellow-400 text-2xl mb-2">
+         <i class="fa-solid fa-coins">
+         </i>
+        </div>
+        <h4 class="font-bold text-white mb-1">
+         交易与金融
+        </h4>
+        <p class="text-sm text-slate-400">
+         支持加密货币交易、汇率查询、钱包管理、空投交互等，甚至可以集成支付功能。
+        </p>
+       </div>
+      </div>
+      <h2 class="text-2xl font-bold mt-10" id="section-3">
+       三、谁需要使用 Bot？（应用场景）
+      </h2>
+      <ul class="space-y-4 mt-4">
+       <li class="flex gap-3">
+        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#24A1DE]/20 text-[#24A1DE] flex items-center justify-center text-xs font-bold">
+         <i class="fa-solid fa-user">
+         </i>
+        </div>
+        <div>
+         <strong class="text-white">
+          个人用户：
+         </strong>
+         <span class="text-slate-300">
+          它是你的效率外挂。用来管理日程、记录笔记、下载资源、查询信息，提升生活效率。
+         </span>
+        </div>
        </li>
-       <li>
-        <strong>
-         手机号状态：
-        </strong>
-        确保手机号未欠费停机，且能正常接收普通短信。
+       <li class="flex gap-3">
+        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#24A1DE]/20 text-[#24A1DE] flex items-center justify-center text-xs font-bold">
+         <i class="fa-solid fa-users">
+         </i>
+        </div>
+        <div>
+         <strong class="text-white">
+          社群运营者：
+         </strong>
+         <span class="text-slate-300">
+          它是得力的管理员。自动欢迎新成员、回答重复性问题、发布公告、组织活动，增强社群凝聚力。
+         </span>
+        </div>
        </li>
-       <li>
-        <strong>
-         避免频繁操作：
-        </strong>
-        如果短时间内多次点击“发送验证码”或输错验证码，Telegram 会触发风控，限制登录。此时切勿继续尝试，需
-        <strong>
-         静置等待 24 小时
-        </strong>
-        后再试。
+       <li class="flex gap-3">
+        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#24A1DE]/20 text-[#24A1DE] flex items-center justify-center text-xs font-bold">
+         <i class="fa-solid fa-building">
+         </i>
+        </div>
+        <div>
+         <strong class="text-white">
+          企业与商家：
+         </strong>
+         <span class="text-slate-300">
+          它是24小时在线的智能客服。解答客户咨询、处理订单、进行数据统计，优化业务流程，节省人力成本。
+         </span>
+        </div>
+       </li>
+       <li class="flex gap-3">
+        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#24A1DE]/20 text-[#24A1DE] flex items-center justify-center text-xs font-bold">
+         <i class="fa-solid fa-code">
+         </i>
+        </div>
+        <div>
+         <strong class="text-white">
+          开发者/极客：
+         </strong>
+         <span class="text-slate-300">
+          它是远程控制中心。可以远程控制电脑、执行 Shell 命令、查看服务器状态，实现“远程之手”。
+         </span>
+        </div>
        </li>
       </ul>
       <h2 class="text-2xl font-bold mt-10" id="section-4">
-       二、尝试高级解决方案
+       四、如何创建一个属于你的 Bot？
       </h2>
-      <p class="text-slate-300">
-       如果基础排查后依然无法登录，可以尝试以下进阶方法：
+      <p class="mt-3 text-slate-300">
+       创建一个 Bot 其实非常简单，不需要写代码也能完成基础注册。只需要通过 Telegram 官方的“BotFather”即可。
       </p>
-      <h3 class="text-xl font-semibold mt-6" id="section-5">
-       1. 尝试语音验证码
-      </h3>
-      <p class="text-slate-300">
-       在登录界面输入手机号后，如果倒计时结束仍未收到短信，界面通常会出现“通过电话验证”（Call me）的选项。点击后，Telegram 会拨打语音电话播报验证码，接听即可。
-      </p>
-      <h3 class="text-xl font-semibold mt-6" id="section-6">
-       2. 利用 Premium 优先通道
-      </h3>
-      <p class="text-slate-300">
-       有用户反馈，近期 Telegram 对 +86 等特定地区的普通账号有登录限制，但
-       <strong>
-        Premium 会员
-       </strong>
-       账号通常拥有更优质的服务器通道。如果你有其他已登录的设备，或朋友有号，可以通过以下方式“曲线救国”：
-      </p>
-      <ul class="list-disc pl-6 mt-2 text-slate-300 space-y-2">
-       <li>
-        <strong>
-         好友赠送：
-        </strong>
-        请有 Premium 的朋友通过“赠送”功能送你一个订阅。
-       </li>
-       <li>
-        <strong>
-         礼品卡兑换：
-        </strong>
-        在 App Store（需美区 ID）购买礼品卡，用余额支付 Premium 订阅。
-       </li>
-      </ul>
-      <h2 class="text-2xl font-bold mt-10" id="section-7">
-       三、登录失败后的注意事项
-      </h2>
-      <div class="bg-slate-800/50 border-l-4 border-yellow-500 p-4 mt-4">
-       <h4 class="font-bold text-white text-sm">
-        账号安全警示
-       </h4>
-       <p class="mt-2 text-slate-300 text-sm">
-        如果你在登录时提示“可疑的登录尝试” (Suspicious Login Attempt)，不要慌张。这通常是异地 IP 登录触发的风控。
-       </p>
-       <ul class="list-disc pl-5 mt-2 text-slate-300 text-sm space-y-1">
-        <li>
-         耐心等待一段时间再试。
-        </li>
-        <li>
-         如果在其他设备（如电脑）上登录过，验证码可能会直接发到那个设备的 Telegram 聊天框里，而不是短信。
-        </li>
-       </ul>
+      <div class="mt-6 space-y-6">
+       <div class="flex gap-4 items-start">
+        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#24A1DE] text-white flex items-center justify-center font-bold text-sm">
+         1
+        </div>
+        <div>
+         <h4 class="font-bold text-white">
+          找到 BotFather
+         </h4>
+         <p class="text-sm text-slate-400 mt-1">
+          在 Telegram 搜索框输入
+          <code>
+           @BotFather
+          </code>
+          （注意有蓝色认证对钩），点击进入并点击底部的 Start。
+         </p>
+        </div>
+       </div>
+       <div class="flex gap-4 items-start">
+        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#24A1DE] text-white flex items-center justify-center font-bold text-sm">
+         2
+        </div>
+        <div>
+         <h4 class="font-bold text-white">
+          发送创建指令
+         </h4>
+         <p class="text-sm text-slate-400 mt-1">
+          发送
+          <code>
+           /newbot
+          </code>
+          指令，BotFather 会提示你为机器人起一个名字（Name，如 "My Super Assistant"）。
+         </p>
+        </div>
+       </div>
+       <div class="flex gap-4 items-start">
+        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#24A1DE] text-white flex items-center justify-center font-bold text-sm">
+         3
+        </div>
+        <div>
+         <h4 class="font-bold text-white">
+          设置用户名 (Username)
+         </h4>
+         <p class="text-sm text-slate-400 mt-1">
+          接着需要设置一个唯一的用户名，
+          <strong>
+           必须以
+           <code>
+            bot
+           </code>
+           结尾
+          </strong>
+          （如
+          <code>
+           my_super_bot
+          </code>
+          ）。
+         </p>
+        </div>
+       </div>
+       <div class="flex gap-4 items-start">
+        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#24A1DE] text-white flex items-center justify-center font-bold text-sm">
+         4
+        </div>
+        <div>
+         <h4 class="font-bold text-white">
+          获取 API Token
+         </h4>
+         <p class="text-sm text-slate-400 mt-1">
+          创建成功后，BotFather 会发给你一串字符，这就是
+          <strong>
+           API Token
+          </strong>
+          。这是机器人的“钥匙”，千万不要泄露给他人！拥有它就可以通过编程控制机器人了。
+         </p>
+        </div>
+       </div>
       </div>
-      <p class="mt-6 text-slate-300">
-       <strong>
-        成功登录后，请务必立即开启“两步验证” (2FA) 并绑定邮箱。
-       </strong>
-       这样即使手机丢失或收不到短信，也能通过邮箱验证码找回账号，大大提升安全性。
+      <div class="mt-6 bg-slate-800 border-l-4 border-[#24A1DE] p-4">
+       <p class="text-sm text-slate-300">
+        <strong>
+         💡 进阶提示：
+        </strong>
+        拿到 Token 后，你可以使用 Python (python-telegram-bot) 或 Node.js (Telegraf) 等库来编写代码，实现复杂的功能。如果你不懂代码，也可以使用一些现成的第三方平台来配置简单的自动回复。
+       </p>
+      </div>
+      <h2 class="text-2xl font-bold mt-10" id="section-5">
+       五、总结
+      </h2>
+      <p class="mt-3 text-slate-300">
+       Telegram Bot 凭借其灵活性和强大的功能，已成为 Telegram 生态中不可或缺的一部分。无论你是想偷懒的普通用户，还是想优化业务的企业主，都能在 Bot 中找到价值。
       </p>
      </div>
      <div class="mt-10">
       <a class="inline-flex items-center gap-2 rounded-xl bg-[#24A1DE] px-6 py-3 font-semibold text-white hover:bg-[#1b8ac0] transition" href="/#products">
-       🛒 总是登不上？购买成品直登号（秒登）
+       🛒 需要批量账号做 Bot 业务？点击购买成品号
       </a>
      </div>
      <div class="mt-8 grid md:grid-cols-2 gap-6">
@@ -423,7 +511,7 @@
          TG
         </div>
         <div class="text-sm text-slate-300">
-         TGMai · 最后更新 2026-01-13
+         TGMai · 最后更新 2026-02-13
         </div>
        </div>
       </div>
@@ -433,10 +521,10 @@
        </div>
        <ul class="text-sm text-slate-300 space-y-2">
         <li>
-         Telegram 官方 FAQ
+         Telegram Bot API 文档
         </li>
         <li>
-         Telegram 登录问题排查
+         Telegram 官方博客
         </li>
        </ul>
       </div>
@@ -445,8 +533,8 @@
       <a class="hover:text-white" href="/blog/">
        ← 返回列表
       </a>
-      <a class="hover:text-white" href="/blog/telegram-passkey-guide">
-       下一篇：设置 Passkey →
+      <a class="hover:text-white" href="/blog/telegram-usage-guide">
+       下一篇：新手指南 →
       </a>
      </div>
      <div class="mt-8 recommendation-section">
@@ -454,14 +542,6 @@
        相关文章
       </h2>
       <div class="grid md:grid-cols-2 gap-4">
-       <a class="block rounded-xl bg-slate-800 border border-white/10 p-4 hover:border-[#24A1DE] transition no-underline" href="/blog/telegram-register-with-chinese-number" style="text-decoration: none !important;">
-        <div class="font-semibold text-white">
-         Telegram能用中国手机号(+86)注册吗？ 最新实测与解决方案
-        </div>
-        <div class="text-xs text-slate-400 mt-1">
-         精选文章
-        </div>
-       </a>
        <a class="block rounded-xl bg-slate-800 border border-white/10 p-4 hover:border-[#24A1DE] transition no-underline" href="/blog/telegram-account-guide" style="text-decoration: none !important;">
         <div class="font-semibold text-white">
          Telegram 账号全攻略：注册、防封与商业化指南
@@ -470,20 +550,28 @@
          使用教程
         </div>
        </a>
-       <a class="block rounded-xl bg-slate-800 border border-white/10 p-4 hover:border-[#24A1DE] transition no-underline" href="/blog/telegram-use-proxy-guide" style="text-decoration: none !important;">
+       <a class="block rounded-xl bg-slate-800 border border-white/10 p-4 hover:border-[#24A1DE] transition no-underline" href="/blog/telegram-hide-phone-number" style="text-decoration: none !important;">
         <div class="font-semibold text-white">
-         Telegram Use Proxy 怎么填？ 最新电报代理填写与设置教程
+         电报(Telegram)如何隐藏手机号？最新隐私设置教程保护个人信息
         </div>
         <div class="text-xs text-slate-400 mt-1">
-         使用教程
+         精选文章
         </div>
        </a>
-       <a class="block rounded-xl bg-slate-800 border border-white/10 p-4 hover:border-[#24A1DE] transition no-underline" href="/blog/telegram-bot-guide" style="text-decoration: none !important;">
+       <a class="block rounded-xl bg-slate-800 border border-white/10 p-4 hover:border-[#24A1DE] transition no-underline" href="/blog/telegram-login-issues" style="text-decoration: none !important;">
         <div class="font-semibold text-white">
-         Telegram Bot 全面指南：从入门到精通（功能、创建与应用场景）
+         Telegram 账号登不上去怎么办？ 最新登录失败排查指南
         </div>
         <div class="text-xs text-slate-400 mt-1">
-         使用教程
+         故障排查
+        </div>
+       </a>
+       <a class="block rounded-xl bg-slate-800 border border-white/10 p-4 hover:border-[#24A1DE] transition no-underline" href="/blog/telegram-register-with-chinese-number" style="text-decoration: none !important;">
+        <div class="font-semibold text-white">
+         Telegram能用中国手机号(+86)注册吗？ 最新实测与解决方案
+        </div>
+        <div class="text-xs text-slate-400 mt-1">
+         精选文章
         </div>
        </a>
       </div>
@@ -497,27 +585,21 @@
        </h2>
        <div class="space-y-2 text-sm text-slate-300" id="toc">
         <a class="block hover:text-[#24A1DE] transition-colors py-1" href="#section-1">
-         一、检查基础问题
+         一、Telegram Bot 是什么？
         </a>
-        <a class="block hover:text-[#24A1DE] transition-colors py-1 pl-4 text-xs text-slate-400" href="#section-2">
-         1. 网络环境 (最常见)
+        <a class="block hover:text-[#24A1DE] transition-colors py-1" href="#section-2">
+         二、它能帮你做什么？（核心功能）
         </a>
-        <a class="block hover:text-[#24A1DE] transition-colors py-1 pl-4 text-xs text-slate-400" href="#section-3">
-         2. 验证码接收障碍
+        <a class="block hover:text-[#24A1DE] transition-colors py-1" href="#section-3">
+         三、谁需要使用 Bot？（应用场景）
         </a>
         <a class="block hover:text-[#24A1DE] transition-colors py-1" href="#section-4">
-         二、尝试高级解决方案
+         四、如何创建一个属于你的 Bot？
         </a>
-        <a class="block hover:text-[#24A1DE] transition-colors py-1 pl-4 text-xs text-slate-400" href="#section-5">
-         1. 尝试语音验证码
+        <a class="block hover:text-[#24A1DE] transition-colors py-1" href="#section-5">
+         五、总结
         </a>
-        <a class="block hover:text-[#24A1DE] transition-colors py-1 pl-4 text-xs text-slate-400" href="#section-6">
-         2. 利用 Premium 优先通道
-        </a>
-        <a class="block hover:text-[#24A1DE] transition-colors py-1" href="#section-7">
-         三、登录失败后的注意事项
-        </a>
-        <a class="block hover:text-[#24A1DE] transition-colors py-1" href="#section-8">
+        <a class="block hover:text-[#24A1DE] transition-colors py-1" href="#section-6">
          相关文章
         </a>
        </div>

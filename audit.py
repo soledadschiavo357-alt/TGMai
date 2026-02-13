@@ -526,7 +526,7 @@ class Auditor:
             print("  Run 'python3 fix_links.py' to attempt automatic link fixes.")
             print("  Run 'python3 build.py' to rebuild static assets if needed.")
 
-        # self.save_csv_report()
+        self.save_csv_report()
 
     def run(self):
         print(f"{Fore.GREEN}Starting SEO Audit...")
