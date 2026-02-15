@@ -457,8 +457,41 @@ def process_posts():
         # Get description
         desc_tag = soup.find('meta', attrs={'name': 'description'})
         description = desc_tag['content'] if desc_tag else ""
-        description = clean_title(description)
         
+        # Try to find summary box (文章摘要) to improve description
+        summary_header = soup.find(string=lambda t: t and '文章摘要' in t)
+        if summary_header:
+            # The header is likely inside a div/h3/etc inside the summary box
+            # Find the parent container that holds the p tag
+            # Usually the structure is container -> [header, p]
+            # So find parent of header, check if it has siblings or if it is the container?
+            # In the file: div(header) is sibling of p. Parent of div(header) is the box.
+            header_elem = summary_header.parent
+            summary_box = header_elem.parent if header_elem else None
+            if summary_box:
+                summary_p = summary_box.find('p')
+                if summary_p:
+                    summary_text = summary_p.get_text(strip=True)
+                    # If summary text is decent length, prefer it over short meta desc
+                    if len(summary_text) > len(description):
+                        description = summary_text
+
+        # Auto-extend description if too short
+        if len(description) < 150:
+            # Search for any tag with prose class (could be div or article)
+            prose = soup.find(class_=lambda x: x and 'prose' in x)
+            if prose:
+                # Get all paragraphs text to ensure we have enough content
+                paragraphs = prose.find_all('p')
+                # Join first few paragraphs
+                extra_text = " ".join([p.get_text(strip=True) for p in paragraphs[:3]])
+                description = f"{description} {extra_text}"
+
+        # Clean and Truncate
+        # description = clean_title(description) # Don't clean years from description
+        if len(description) > 200:
+            description = description[:197] + "..."
+
         # Get Date
         date_str = "2025-01-01"
         time_tag = soup.find('time')

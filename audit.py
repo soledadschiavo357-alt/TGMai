@@ -85,7 +85,8 @@ class Auditor:
             'missing_h1': 0,
             'bad_url_format': 0,
             'missing_schema': 0,
-            'orphans': 0
+            'orphans': 0,
+            'short_meta_desc': 0
         }
         
         # Cache for validation
@@ -210,6 +211,15 @@ class Auditor:
                 title_tag = soup.find('title')
                 if title_tag and title_tag.string:
                     self.page_details[clean_source]['title'] = title_tag.string.strip()
+
+                # Meta Description Check
+                meta_desc = soup.find('meta', attrs={'name': 'description'})
+                if meta_desc and meta_desc.get('content'):
+                    desc_len = len(meta_desc['content'].strip())
+                    if desc_len < 100:
+                        print(f"{Fore.YELLOW}[WARN] Meta description too short ({desc_len} chars): {rel_path}")
+                        self.score -= 2
+                        self.issues['short_meta_desc'] += 1
 
                 # --- Semantics ---
                 # H1 Check
